@@ -192,7 +192,7 @@ for signal_name, signal_population in sorted(signal_dict.items()):
     print(output_line.format(print_offset=print_offset, 
                              signal_name=signal_name,
                              num_records=len(signal_population),
-                             missing_records= ", ".join(missing))
+                             missing_records= ", ".join(sorted(missing)))
          )
 print("#"*72) #box footer
 
