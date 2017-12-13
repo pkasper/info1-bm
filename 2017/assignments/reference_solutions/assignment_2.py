@@ -1,6 +1,6 @@
 # coding: utf-8
 
-# In[1]:
+# In[]:
 
 
 ########################################################################
@@ -12,7 +12,7 @@
 ########################################################################
 
 
-# In[2]:
+# In[]:
 
 
 import argparse
@@ -24,7 +24,7 @@ import sys
 import numpy as np
 from scipy.stats import pearsonr
 
-# In[29]:
+# In[]:
 
 
 try:
@@ -44,7 +44,7 @@ except:
     pass
 
 
-# In[4]:
+# In[]:
 
 
 def data_load(_path):
@@ -63,7 +63,7 @@ def data_load(_path):
     return data
 
 
-# In[28]:
+# In[]:
 
 
 def data_read_binary(_data, _binary_dir):
@@ -102,14 +102,14 @@ def data_read_binary(_data, _binary_dir):
     return _data
 
 
-# In[6]:
+# In[]:
 
 
 def merge_sublists(_list, _func):
     return [_func(x) for x in _list]
 
 
-# In[7]:
+# In[]:
 
 
 def calculate_checksum(_list):
@@ -119,7 +119,7 @@ def calculate_checksum(_list):
     return signed_sum
 
 
-# In[12]:
+# In[]:
 
 
 def data_verify(_data):
@@ -136,7 +136,7 @@ def data_verify(_data):
                               signal=signal_name))
 
 
-# In[14]:
+# In[]:
 
 
 def data_correlate_gsr(_data):
@@ -163,7 +163,7 @@ def data_correlate_gsr(_data):
                           coefficient=correlation_coefficient[0]))
 
 
-# In[15]:
+# In[]:
 
 
 def data_store(_data, _path):
@@ -171,7 +171,7 @@ def data_store(_data, _path):
         pickle.dump(_data, output_pickle)
 
 
-# In[16]:
+# In[]:
 
 
 if __name__ == "__main__":
