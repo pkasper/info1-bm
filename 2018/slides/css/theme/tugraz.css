@@ -1,0 +1,2601 @@
+@charset "UTF-8";
+/**
+ * TU Graz theme for reveal.js.
+ *
+ * By Florian Klien <klien@tugraz.at> (2016)
+ *
+ * TU Graz' color is #E4154B, corporate design says Arial for print,
+ * but sources are inconsistent. Source Sans Pro is suggested
+ * for websites.
+ */
+/*!
+ *  Font Awesome 4.6.3 by @davegandy - http://fontawesome.io - @fontawesome
+ *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+ */
+/* FONT PATH
+ * -------------------------- */
+@import url(../../lib/font/source-sans-pro/source-sans-pro.css);
+@font-face {
+  font-family: 'FontAwesome';
+  src: url("../../lib/css/font-awesome/fonts/fontawesome-webfont.eot?v=4.6.3");
+  src: url("../../lib/css/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.6.3") format("embedded-opentype"), url("../../lib/css/font-awesome/fonts/fontawesome-webfont.woff2?v=4.6.3") format("woff2"), url("../../lib/css/font-awesome/fonts/fontawesome-webfont.woff?v=4.6.3") format("woff"), url("../../lib/css/font-awesome/fonts/fontawesome-webfont.ttf?v=4.6.3") format("truetype"), url("../../lib/css/font-awesome/fonts/fontawesome-webfont.svg?v=4.6.3#fontawesomeregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+/* makes the font 33% larger relative to the icon container */
+.fa-lg {
+  font-size: 1.33333em;
+  line-height: 0.75em;
+  vertical-align: -15%; }
+
+.fa-2x {
+  font-size: 2em; }
+
+.fa-3x {
+  font-size: 3em; }
+
+.fa-4x {
+  font-size: 4em; }
+
+.fa-5x {
+  font-size: 5em; }
+
+.fa-fw {
+  width: 1.28571em;
+  text-align: center; }
+
+.fa-ul {
+  padding-left: 0;
+  margin-left: 2.14286em;
+  list-style-type: none; }
+  .fa-ul > li {
+    position: relative; }
+
+.fa-li {
+  position: absolute;
+  left: -2.14286em;
+  width: 2.14286em;
+  top: 0.14286em;
+  text-align: center; }
+  .fa-li.fa-lg {
+    left: -1.85714em; }
+
+.fa-border {
+  padding: .2em .25em .15em;
+  border: solid 0.08em #eee;
+  border-radius: .1em; }
+
+.fa-pull-left {
+  float: left; }
+
+.fa-pull-right {
+  float: right; }
+
+.fa.fa-pull-left {
+  margin-right: .3em; }
+
+.fa.fa-pull-right {
+  margin-left: .3em; }
+
+/* Deprecated as of 4.4.0 */
+.pull-right {
+  float: right; }
+
+.pull-left {
+  float: left; }
+
+.fa.pull-left {
+  margin-right: .3em; }
+
+.fa.pull-right {
+  margin-left: .3em; }
+
+.fa-spin {
+  -webkit-animation: fa-spin 2s infinite linear;
+  animation: fa-spin 2s infinite linear; }
+
+.fa-pulse {
+  -webkit-animation: fa-spin 1s infinite steps(8);
+  animation: fa-spin 1s infinite steps(8); }
+
+@-webkit-keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg); } }
+
+@keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg); } }
+
+.fa-rotate-90 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg); }
+
+.fa-rotate-180 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg); }
+
+.fa-rotate-270 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
+  -webkit-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  transform: rotate(270deg); }
+
+.fa-flip-horizontal {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
+  -webkit-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  transform: scale(-1, 1); }
+
+.fa-flip-vertical {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
+  -webkit-transform: scale(1, -1);
+  -ms-transform: scale(1, -1);
+  transform: scale(1, -1); }
+
+:root .fa-rotate-90,
+:root .fa-rotate-180,
+:root .fa-rotate-270,
+:root .fa-flip-horizontal,
+:root .fa-flip-vertical {
+  filter: none; }
+
+.fa-stack {
+  position: relative;
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  vertical-align: middle; }
+
+.fa-stack-1x, .fa-stack-2x {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center; }
+
+.fa-stack-1x {
+  line-height: inherit; }
+
+.fa-stack-2x {
+  font-size: 2em; }
+
+.fa-inverse {
+  color: #fff; }
+
+/* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
+   readers do not read off random characters that represent icons */
+.fa-glass:before {
+  content: ""; }
+
+.fa-music:before {
+  content: ""; }
+
+.fa-search:before {
+  content: ""; }
+
+.fa-envelope-o:before {
+  content: ""; }
+
+.fa-heart:before {
+  content: ""; }
+
+.fa-star:before {
+  content: ""; }
+
+.fa-star-o:before {
+  content: ""; }
+
+.fa-user:before {
+  content: ""; }
+
+.fa-film:before {
+  content: ""; }
+
+.fa-th-large:before {
+  content: ""; }
+
+.fa-th:before {
+  content: ""; }
+
+.fa-th-list:before {
+  content: ""; }
+
+.fa-check:before {
+  content: ""; }
+
+.fa-remove:before,
+.fa-close:before,
+.fa-times:before {
+  content: ""; }
+
+.fa-search-plus:before {
+  content: ""; }
+
+.fa-search-minus:before {
+  content: ""; }
+
+.fa-power-off:before {
+  content: ""; }
+
+.fa-signal:before {
+  content: ""; }
+
+.fa-gear:before,
+.fa-cog:before {
+  content: ""; }
+
+.fa-trash-o:before {
+  content: ""; }
+
+.fa-home:before {
+  content: ""; }
+
+.fa-file-o:before {
+  content: ""; }
+
+.fa-clock-o:before {
+  content: ""; }
+
+.fa-road:before {
+  content: ""; }
+
+.fa-download:before {
+  content: ""; }
+
+.fa-arrow-circle-o-down:before {
+  content: ""; }
+
+.fa-arrow-circle-o-up:before {
+  content: ""; }
+
+.fa-inbox:before {
+  content: ""; }
+
+.fa-play-circle-o:before {
+  content: ""; }
+
+.fa-rotate-right:before,
+.fa-repeat:before {
+  content: ""; }
+
+.fa-refresh:before {
+  content: ""; }
+
+.fa-list-alt:before {
+  content: ""; }
+
+.fa-lock:before {
+  content: ""; }
+
+.fa-flag:before {
+  content: ""; }
+
+.fa-headphones:before {
+  content: ""; }
+
+.fa-volume-off:before {
+  content: ""; }
+
+.fa-volume-down:before {
+  content: ""; }
+
+.fa-volume-up:before {
+  content: ""; }
+
+.fa-qrcode:before {
+  content: ""; }
+
+.fa-barcode:before {
+  content: ""; }
+
+.fa-tag:before {
+  content: ""; }
+
+.fa-tags:before {
+  content: ""; }
+
+.fa-book:before {
+  content: ""; }
+
+.fa-bookmark:before {
+  content: ""; }
+
+.fa-print:before {
+  content: ""; }
+
+.fa-camera:before {
+  content: ""; }
+
+.fa-font:before {
+  content: ""; }
+
+.fa-bold:before {
+  content: ""; }
+
+.fa-italic:before {
+  content: ""; }
+
+.fa-text-height:before {
+  content: ""; }
+
+.fa-text-width:before {
+  content: ""; }
+
+.fa-align-left:before {
+  content: ""; }
+
+.fa-align-center:before {
+  content: ""; }
+
+.fa-align-right:before {
+  content: ""; }
+
+.fa-align-justify:before {
+  content: ""; }
+
+.fa-list:before {
+  content: ""; }
+
+.fa-dedent:before,
+.fa-outdent:before {
+  content: ""; }
+
+.fa-indent:before {
+  content: ""; }
+
+.fa-video-camera:before {
+  content: ""; }
+
+.fa-photo:before,
+.fa-image:before,
+.fa-picture-o:before {
+  content: ""; }
+
+.fa-pencil:before {
+  content: ""; }
+
+.fa-map-marker:before {
+  content: ""; }
+
+.fa-adjust:before {
+  content: ""; }
+
+.fa-tint:before {
+  content: ""; }
+
+.fa-edit:before,
+.fa-pencil-square-o:before {
+  content: ""; }
+
+.fa-share-square-o:before {
+  content: ""; }
+
+.fa-check-square-o:before {
+  content: ""; }
+
+.fa-arrows:before {
+  content: ""; }
+
+.fa-step-backward:before {
+  content: ""; }
+
+.fa-fast-backward:before {
+  content: ""; }
+
+.fa-backward:before {
+  content: ""; }
+
+.fa-play:before {
+  content: ""; }
+
+.fa-pause:before {
+  content: ""; }
+
+.fa-stop:before {
+  content: ""; }
+
+.fa-forward:before {
+  content: ""; }
+
+.fa-fast-forward:before {
+  content: ""; }
+
+.fa-step-forward:before {
+  content: ""; }
+
+.fa-eject:before {
+  content: ""; }
+
+.fa-chevron-left:before {
+  content: ""; }
+
+.fa-chevron-right:before {
+  content: ""; }
+
+.fa-plus-circle:before {
+  content: ""; }
+
+.fa-minus-circle:before {
+  content: ""; }
+
+.fa-times-circle:before {
+  content: ""; }
+
+.fa-check-circle:before {
+  content: ""; }
+
+.fa-question-circle:before {
+  content: ""; }
+
+.fa-info-circle:before {
+  content: ""; }
+
+.fa-crosshairs:before {
+  content: ""; }
+
+.fa-times-circle-o:before {
+  content: ""; }
+
+.fa-check-circle-o:before {
+  content: ""; }
+
+.fa-ban:before {
+  content: ""; }
+
+.fa-arrow-left:before {
+  content: ""; }
+
+.fa-arrow-right:before {
+  content: ""; }
+
+.fa-arrow-up:before {
+  content: ""; }
+
+.fa-arrow-down:before {
+  content: ""; }
+
+.fa-mail-forward:before,
+.fa-share:before {
+  content: ""; }
+
+.fa-expand:before {
+  content: ""; }
+
+.fa-compress:before {
+  content: ""; }
+
+.fa-plus:before {
+  content: ""; }
+
+.fa-minus:before {
+  content: ""; }
+
+.fa-asterisk:before {
+  content: ""; }
+
+.fa-exclamation-circle:before {
+  content: ""; }
+
+.fa-gift:before {
+  content: ""; }
+
+.fa-leaf:before {
+  content: ""; }
+
+.fa-fire:before {
+  content: ""; }
+
+.fa-eye:before {
+  content: ""; }
+
+.fa-eye-slash:before {
+  content: ""; }
+
+.fa-warning:before,
+.fa-exclamation-triangle:before {
+  content: ""; }
+
+.fa-plane:before {
+  content: ""; }
+
+.fa-calendar:before {
+  content: ""; }
+
+.fa-random:before {
+  content: ""; }
+
+.fa-comment:before {
+  content: ""; }
+
+.fa-magnet:before {
+  content: ""; }
+
+.fa-chevron-up:before {
+  content: ""; }
+
+.fa-chevron-down:before {
+  content: ""; }
+
+.fa-retweet:before {
+  content: ""; }
+
+.fa-shopping-cart:before {
+  content: ""; }
+
+.fa-folder:before {
+  content: ""; }
+
+.fa-folder-open:before {
+  content: ""; }
+
+.fa-arrows-v:before {
+  content: ""; }
+
+.fa-arrows-h:before {
+  content: ""; }
+
+.fa-bar-chart-o:before,
+.fa-bar-chart:before {
+  content: ""; }
+
+.fa-twitter-square:before {
+  content: ""; }
+
+.fa-facebook-square:before {
+  content: ""; }
+
+.fa-camera-retro:before {
+  content: ""; }
+
+.fa-key:before {
+  content: ""; }
+
+.fa-gears:before,
+.fa-cogs:before {
+  content: ""; }
+
+.fa-comments:before {
+  content: ""; }
+
+.fa-thumbs-o-up:before {
+  content: ""; }
+
+.fa-thumbs-o-down:before {
+  content: ""; }
+
+.fa-star-half:before {
+  content: ""; }
+
+.fa-heart-o:before {
+  content: ""; }
+
+.fa-sign-out:before {
+  content: ""; }
+
+.fa-linkedin-square:before {
+  content: ""; }
+
+.fa-thumb-tack:before {
+  content: ""; }
+
+.fa-external-link:before {
+  content: ""; }
+
+.fa-sign-in:before {
+  content: ""; }
+
+.fa-trophy:before {
+  content: ""; }
+
+.fa-github-square:before {
+  content: ""; }
+
+.fa-upload:before {
+  content: ""; }
+
+.fa-lemon-o:before {
+  content: ""; }
+
+.fa-phone:before {
+  content: ""; }
+
+.fa-square-o:before {
+  content: ""; }
+
+.fa-bookmark-o:before {
+  content: ""; }
+
+.fa-phone-square:before {
+  content: ""; }
+
+.fa-twitter:before {
+  content: ""; }
+
+.fa-facebook-f:before,
+.fa-facebook:before {
+  content: ""; }
+
+.fa-github:before {
+  content: ""; }
+
+.fa-unlock:before {
+  content: ""; }
+
+.fa-credit-card:before {
+  content: ""; }
+
+.fa-feed:before,
+.fa-rss:before {
+  content: ""; }
+
+.fa-hdd-o:before {
+  content: ""; }
+
+.fa-bullhorn:before {
+  content: ""; }
+
+.fa-bell:before {
+  content: ""; }
+
+.fa-certificate:before {
+  content: ""; }
+
+.fa-hand-o-right:before {
+  content: ""; }
+
+.fa-hand-o-left:before {
+  content: ""; }
+
+.fa-hand-o-up:before {
+  content: ""; }
+
+.fa-hand-o-down:before {
+  content: ""; }
+
+.fa-arrow-circle-left:before {
+  content: ""; }
+
+.fa-arrow-circle-right:before {
+  content: ""; }
+
+.fa-arrow-circle-up:before {
+  content: ""; }
+
+.fa-arrow-circle-down:before {
+  content: ""; }
+
+.fa-globe:before {
+  content: ""; }
+
+.fa-wrench:before {
+  content: ""; }
+
+.fa-tasks:before {
+  content: ""; }
+
+.fa-filter:before {
+  content: ""; }
+
+.fa-briefcase:before {
+  content: ""; }
+
+.fa-arrows-alt:before {
+  content: ""; }
+
+.fa-group:before,
+.fa-users:before {
+  content: ""; }
+
+.fa-chain:before,
+.fa-link:before {
+  content: ""; }
+
+.fa-cloud:before {
+  content: ""; }
+
+.fa-flask:before {
+  content: ""; }
+
+.fa-cut:before,
+.fa-scissors:before {
+  content: ""; }
+
+.fa-copy:before,
+.fa-files-o:before {
+  content: ""; }
+
+.fa-paperclip:before {
+  content: ""; }
+
+.fa-save:before,
+.fa-floppy-o:before {
+  content: ""; }
+
+.fa-square:before {
+  content: ""; }
+
+.fa-navicon:before,
+.fa-reorder:before,
+.fa-bars:before {
+  content: ""; }
+
+.fa-list-ul:before {
+  content: ""; }
+
+.fa-list-ol:before {
+  content: ""; }
+
+.fa-strikethrough:before {
+  content: ""; }
+
+.fa-underline:before {
+  content: ""; }
+
+.fa-table:before {
+  content: ""; }
+
+.fa-magic:before {
+  content: ""; }
+
+.fa-truck:before {
+  content: ""; }
+
+.fa-pinterest:before {
+  content: ""; }
+
+.fa-pinterest-square:before {
+  content: ""; }
+
+.fa-google-plus-square:before {
+  content: ""; }
+
+.fa-google-plus:before {
+  content: ""; }
+
+.fa-money:before {
+  content: ""; }
+
+.fa-caret-down:before {
+  content: ""; }
+
+.fa-caret-up:before {
+  content: ""; }
+
+.fa-caret-left:before {
+  content: ""; }
+
+.fa-caret-right:before {
+  content: ""; }
+
+.fa-columns:before {
+  content: ""; }
+
+.fa-unsorted:before,
+.fa-sort:before {
+  content: ""; }
+
+.fa-sort-down:before,
+.fa-sort-desc:before {
+  content: ""; }
+
+.fa-sort-up:before,
+.fa-sort-asc:before {
+  content: ""; }
+
+.fa-envelope:before {
+  content: ""; }
+
+.fa-linkedin:before {
+  content: ""; }
+
+.fa-rotate-left:before,
+.fa-undo:before {
+  content: ""; }
+
+.fa-legal:before,
+.fa-gavel:before {
+  content: ""; }
+
+.fa-dashboard:before,
+.fa-tachometer:before {
+  content: ""; }
+
+.fa-comment-o:before {
+  content: ""; }
+
+.fa-comments-o:before {
+  content: ""; }
+
+.fa-flash:before,
+.fa-bolt:before {
+  content: ""; }
+
+.fa-sitemap:before {
+  content: ""; }
+
+.fa-umbrella:before {
+  content: ""; }
+
+.fa-paste:before,
+.fa-clipboard:before {
+  content: ""; }
+
+.fa-lightbulb-o:before {
+  content: ""; }
+
+.fa-exchange:before {
+  content: ""; }
+
+.fa-cloud-download:before {
+  content: ""; }
+
+.fa-cloud-upload:before {
+  content: ""; }
+
+.fa-user-md:before {
+  content: ""; }
+
+.fa-stethoscope:before {
+  content: ""; }
+
+.fa-suitcase:before {
+  content: ""; }
+
+.fa-bell-o:before {
+  content: ""; }
+
+.fa-coffee:before {
+  content: ""; }
+
+.fa-cutlery:before {
+  content: ""; }
+
+.fa-file-text-o:before {
+  content: ""; }
+
+.fa-building-o:before {
+  content: ""; }
+
+.fa-hospital-o:before {
+  content: ""; }
+
+.fa-ambulance:before {
+  content: ""; }
+
+.fa-medkit:before {
+  content: ""; }
+
+.fa-fighter-jet:before {
+  content: ""; }
+
+.fa-beer:before {
+  content: ""; }
+
+.fa-h-square:before {
+  content: ""; }
+
+.fa-plus-square:before {
+  content: ""; }
+
+.fa-angle-double-left:before {
+  content: ""; }
+
+.fa-angle-double-right:before {
+  content: ""; }
+
+.fa-angle-double-up:before {
+  content: ""; }
+
+.fa-angle-double-down:before {
+  content: ""; }
+
+.fa-angle-left:before {
+  content: ""; }
+
+.fa-angle-right:before {
+  content: ""; }
+
+.fa-angle-up:before {
+  content: ""; }
+
+.fa-angle-down:before {
+  content: ""; }
+
+.fa-desktop:before {
+  content: ""; }
+
+.fa-laptop:before {
+  content: ""; }
+
+.fa-tablet:before {
+  content: ""; }
+
+.fa-mobile-phone:before,
+.fa-mobile:before {
+  content: ""; }
+
+.fa-circle-o:before {
+  content: ""; }
+
+.fa-quote-left:before {
+  content: ""; }
+
+.fa-quote-right:before {
+  content: ""; }
+
+.fa-spinner:before {
+  content: ""; }
+
+.fa-circle:before {
+  content: ""; }
+
+.fa-mail-reply:before,
+.fa-reply:before {
+  content: ""; }
+
+.fa-github-alt:before {
+  content: ""; }
+
+.fa-folder-o:before {
+  content: ""; }
+
+.fa-folder-open-o:before {
+  content: ""; }
+
+.fa-smile-o:before {
+  content: ""; }
+
+.fa-frown-o:before {
+  content: ""; }
+
+.fa-meh-o:before {
+  content: ""; }
+
+.fa-gamepad:before {
+  content: ""; }
+
+.fa-keyboard-o:before {
+  content: ""; }
+
+.fa-flag-o:before {
+  content: ""; }
+
+.fa-flag-checkered:before {
+  content: ""; }
+
+.fa-terminal:before {
+  content: ""; }
+
+.fa-code:before {
+  content: ""; }
+
+.fa-mail-reply-all:before,
+.fa-reply-all:before {
+  content: ""; }
+
+.fa-star-half-empty:before,
+.fa-star-half-full:before,
+.fa-star-half-o:before {
+  content: ""; }
+
+.fa-location-arrow:before {
+  content: ""; }
+
+.fa-crop:before {
+  content: ""; }
+
+.fa-code-fork:before {
+  content: ""; }
+
+.fa-unlink:before,
+.fa-chain-broken:before {
+  content: ""; }
+
+.fa-question:before {
+  content: ""; }
+
+.fa-info:before {
+  content: ""; }
+
+.fa-exclamation:before {
+  content: ""; }
+
+.fa-superscript:before {
+  content: ""; }
+
+.fa-subscript:before {
+  content: ""; }
+
+.fa-eraser:before {
+  content: ""; }
+
+.fa-puzzle-piece:before {
+  content: ""; }
+
+.fa-microphone:before {
+  content: ""; }
+
+.fa-microphone-slash:before {
+  content: ""; }
+
+.fa-shield:before {
+  content: ""; }
+
+.fa-calendar-o:before {
+  content: ""; }
+
+.fa-fire-extinguisher:before {
+  content: ""; }
+
+.fa-rocket:before {
+  content: ""; }
+
+.fa-maxcdn:before {
+  content: ""; }
+
+.fa-chevron-circle-left:before {
+  content: ""; }
+
+.fa-chevron-circle-right:before {
+  content: ""; }
+
+.fa-chevron-circle-up:before {
+  content: ""; }
+
+.fa-chevron-circle-down:before {
+  content: ""; }
+
+.fa-html5:before {
+  content: ""; }
+
+.fa-css3:before {
+  content: ""; }
+
+.fa-anchor:before {
+  content: ""; }
+
+.fa-unlock-alt:before {
+  content: ""; }
+
+.fa-bullseye:before {
+  content: ""; }
+
+.fa-ellipsis-h:before {
+  content: ""; }
+
+.fa-ellipsis-v:before {
+  content: ""; }
+
+.fa-rss-square:before {
+  content: ""; }
+
+.fa-play-circle:before {
+  content: ""; }
+
+.fa-ticket:before {
+  content: ""; }
+
+.fa-minus-square:before {
+  content: ""; }
+
+.fa-minus-square-o:before {
+  content: ""; }
+
+.fa-level-up:before {
+  content: ""; }
+
+.fa-level-down:before {
+  content: ""; }
+
+.fa-check-square:before {
+  content: ""; }
+
+.fa-pencil-square:before {
+  content: ""; }
+
+.fa-external-link-square:before {
+  content: ""; }
+
+.fa-share-square:before {
+  content: ""; }
+
+.fa-compass:before {
+  content: ""; }
+
+.fa-toggle-down:before,
+.fa-caret-square-o-down:before {
+  content: ""; }
+
+.fa-toggle-up:before,
+.fa-caret-square-o-up:before {
+  content: ""; }
+
+.fa-toggle-right:before,
+.fa-caret-square-o-right:before {
+  content: ""; }
+
+.fa-euro:before,
+.fa-eur:before {
+  content: ""; }
+
+.fa-gbp:before {
+  content: ""; }
+
+.fa-dollar:before,
+.fa-usd:before {
+  content: ""; }
+
+.fa-rupee:before,
+.fa-inr:before {
+  content: ""; }
+
+.fa-cny:before,
+.fa-rmb:before,
+.fa-yen:before,
+.fa-jpy:before {
+  content: ""; }
+
+.fa-ruble:before,
+.fa-rouble:before,
+.fa-rub:before {
+  content: ""; }
+
+.fa-won:before,
+.fa-krw:before {
+  content: ""; }
+
+.fa-bitcoin:before,
+.fa-btc:before {
+  content: ""; }
+
+.fa-file:before {
+  content: ""; }
+
+.fa-file-text:before {
+  content: ""; }
+
+.fa-sort-alpha-asc:before {
+  content: ""; }
+
+.fa-sort-alpha-desc:before {
+  content: ""; }
+
+.fa-sort-amount-asc:before {
+  content: ""; }
+
+.fa-sort-amount-desc:before {
+  content: ""; }
+
+.fa-sort-numeric-asc:before {
+  content: ""; }
+
+.fa-sort-numeric-desc:before {
+  content: ""; }
+
+.fa-thumbs-up:before {
+  content: ""; }
+
+.fa-thumbs-down:before {
+  content: ""; }
+
+.fa-youtube-square:before {
+  content: ""; }
+
+.fa-youtube:before {
+  content: ""; }
+
+.fa-xing:before {
+  content: ""; }
+
+.fa-xing-square:before {
+  content: ""; }
+
+.fa-youtube-play:before {
+  content: ""; }
+
+.fa-dropbox:before {
+  content: ""; }
+
+.fa-stack-overflow:before {
+  content: ""; }
+
+.fa-instagram:before {
+  content: ""; }
+
+.fa-flickr:before {
+  content: ""; }
+
+.fa-adn:before {
+  content: ""; }
+
+.fa-bitbucket:before {
+  content: ""; }
+
+.fa-bitbucket-square:before {
+  content: ""; }
+
+.fa-tumblr:before {
+  content: ""; }
+
+.fa-tumblr-square:before {
+  content: ""; }
+
+.fa-long-arrow-down:before {
+  content: ""; }
+
+.fa-long-arrow-up:before {
+  content: ""; }
+
+.fa-long-arrow-left:before {
+  content: ""; }
+
+.fa-long-arrow-right:before {
+  content: ""; }
+
+.fa-apple:before {
+  content: ""; }
+
+.fa-windows:before {
+  content: ""; }
+
+.fa-android:before {
+  content: ""; }
+
+.fa-linux:before {
+  content: ""; }
+
+.fa-dribbble:before {
+  content: ""; }
+
+.fa-skype:before {
+  content: ""; }
+
+.fa-foursquare:before {
+  content: ""; }
+
+.fa-trello:before {
+  content: ""; }
+
+.fa-female:before {
+  content: ""; }
+
+.fa-male:before {
+  content: ""; }
+
+.fa-gittip:before,
+.fa-gratipay:before {
+  content: ""; }
+
+.fa-sun-o:before {
+  content: ""; }
+
+.fa-moon-o:before {
+  content: ""; }
+
+.fa-archive:before {
+  content: ""; }
+
+.fa-bug:before {
+  content: ""; }
+
+.fa-vk:before {
+  content: ""; }
+
+.fa-weibo:before {
+  content: ""; }
+
+.fa-renren:before {
+  content: ""; }
+
+.fa-pagelines:before {
+  content: ""; }
+
+.fa-stack-exchange:before {
+  content: ""; }
+
+.fa-arrow-circle-o-right:before {
+  content: ""; }
+
+.fa-arrow-circle-o-left:before {
+  content: ""; }
+
+.fa-toggle-left:before,
+.fa-caret-square-o-left:before {
+  content: ""; }
+
+.fa-dot-circle-o:before {
+  content: ""; }
+
+.fa-wheelchair:before {
+  content: ""; }
+
+.fa-vimeo-square:before {
+  content: ""; }
+
+.fa-turkish-lira:before,
+.fa-try:before {
+  content: ""; }
+
+.fa-plus-square-o:before {
+  content: ""; }
+
+.fa-space-shuttle:before {
+  content: ""; }
+
+.fa-slack:before {
+  content: ""; }
+
+.fa-envelope-square:before {
+  content: ""; }
+
+.fa-wordpress:before {
+  content: ""; }
+
+.fa-openid:before {
+  content: ""; }
+
+.fa-institution:before,
+.fa-bank:before,
+.fa-university:before {
+  content: ""; }
+
+.fa-mortar-board:before,
+.fa-graduation-cap:before {
+  content: ""; }
+
+.fa-yahoo:before {
+  content: ""; }
+
+.fa-google:before {
+  content: ""; }
+
+.fa-reddit:before {
+  content: ""; }
+
+.fa-reddit-square:before {
+  content: ""; }
+
+.fa-stumbleupon-circle:before {
+  content: ""; }
+
+.fa-stumbleupon:before {
+  content: ""; }
+
+.fa-delicious:before {
+  content: ""; }
+
+.fa-digg:before {
+  content: ""; }
+
+.fa-pied-piper-pp:before {
+  content: ""; }
+
+.fa-pied-piper-alt:before {
+  content: ""; }
+
+.fa-drupal:before {
+  content: ""; }
+
+.fa-joomla:before {
+  content: ""; }
+
+.fa-language:before {
+  content: ""; }
+
+.fa-fax:before {
+  content: ""; }
+
+.fa-building:before {
+  content: ""; }
+
+.fa-child:before {
+  content: ""; }
+
+.fa-paw:before {
+  content: ""; }
+
+.fa-spoon:before {
+  content: ""; }
+
+.fa-cube:before {
+  content: ""; }
+
+.fa-cubes:before {
+  content: ""; }
+
+.fa-behance:before {
+  content: ""; }
+
+.fa-behance-square:before {
+  content: ""; }
+
+.fa-steam:before {
+  content: ""; }
+
+.fa-steam-square:before {
+  content: ""; }
+
+.fa-recycle:before {
+  content: ""; }
+
+.fa-automobile:before,
+.fa-car:before {
+  content: ""; }
+
+.fa-cab:before,
+.fa-taxi:before {
+  content: ""; }
+
+.fa-tree:before {
+  content: ""; }
+
+.fa-spotify:before {
+  content: ""; }
+
+.fa-deviantart:before {
+  content: ""; }
+
+.fa-soundcloud:before {
+  content: ""; }
+
+.fa-database:before {
+  content: ""; }
+
+.fa-file-pdf-o:before {
+  content: ""; }
+
+.fa-file-word-o:before {
+  content: ""; }
+
+.fa-file-excel-o:before {
+  content: ""; }
+
+.fa-file-powerpoint-o:before {
+  content: ""; }
+
+.fa-file-photo-o:before,
+.fa-file-picture-o:before,
+.fa-file-image-o:before {
+  content: ""; }
+
+.fa-file-zip-o:before,
+.fa-file-archive-o:before {
+  content: ""; }
+
+.fa-file-sound-o:before,
+.fa-file-audio-o:before {
+  content: ""; }
+
+.fa-file-movie-o:before,
+.fa-file-video-o:before {
+  content: ""; }
+
+.fa-file-code-o:before {
+  content: ""; }
+
+.fa-vine:before {
+  content: ""; }
+
+.fa-codepen:before {
+  content: ""; }
+
+.fa-jsfiddle:before {
+  content: ""; }
+
+.fa-life-bouy:before,
+.fa-life-buoy:before,
+.fa-life-saver:before,
+.fa-support:before,
+.fa-life-ring:before {
+  content: ""; }
+
+.fa-circle-o-notch:before {
+  content: ""; }
+
+.fa-ra:before,
+.fa-resistance:before,
+.fa-rebel:before {
+  content: ""; }
+
+.fa-ge:before,
+.fa-empire:before {
+  content: ""; }
+
+.fa-git-square:before {
+  content: ""; }
+
+.fa-git:before {
+  content: ""; }
+
+.fa-y-combinator-square:before,
+.fa-yc-square:before,
+.fa-hacker-news:before {
+  content: ""; }
+
+.fa-tencent-weibo:before {
+  content: ""; }
+
+.fa-qq:before {
+  content: ""; }
+
+.fa-wechat:before,
+.fa-weixin:before {
+  content: ""; }
+
+.fa-send:before,
+.fa-paper-plane:before {
+  content: ""; }
+
+.fa-send-o:before,
+.fa-paper-plane-o:before {
+  content: ""; }
+
+.fa-history:before {
+  content: ""; }
+
+.fa-circle-thin:before {
+  content: ""; }
+
+.fa-header:before {
+  content: ""; }
+
+.fa-paragraph:before {
+  content: ""; }
+
+.fa-sliders:before {
+  content: ""; }
+
+.fa-share-alt:before {
+  content: ""; }
+
+.fa-share-alt-square:before {
+  content: ""; }
+
+.fa-bomb:before {
+  content: ""; }
+
+.fa-soccer-ball-o:before,
+.fa-futbol-o:before {
+  content: ""; }
+
+.fa-tty:before {
+  content: ""; }
+
+.fa-binoculars:before {
+  content: ""; }
+
+.fa-plug:before {
+  content: ""; }
+
+.fa-slideshare:before {
+  content: ""; }
+
+.fa-twitch:before {
+  content: ""; }
+
+.fa-yelp:before {
+  content: ""; }
+
+.fa-newspaper-o:before {
+  content: ""; }
+
+.fa-wifi:before {
+  content: ""; }
+
+.fa-calculator:before {
+  content: ""; }
+
+.fa-paypal:before {
+  content: ""; }
+
+.fa-google-wallet:before {
+  content: ""; }
+
+.fa-cc-visa:before {
+  content: ""; }
+
+.fa-cc-mastercard:before {
+  content: ""; }
+
+.fa-cc-discover:before {
+  content: ""; }
+
+.fa-cc-amex:before {
+  content: ""; }
+
+.fa-cc-paypal:before {
+  content: ""; }
+
+.fa-cc-stripe:before {
+  content: ""; }
+
+.fa-bell-slash:before {
+  content: ""; }
+
+.fa-bell-slash-o:before {
+  content: ""; }
+
+.fa-trash:before {
+  content: ""; }
+
+.fa-copyright:before {
+  content: ""; }
+
+.fa-at:before {
+  content: ""; }
+
+.fa-eyedropper:before {
+  content: ""; }
+
+.fa-paint-brush:before {
+  content: ""; }
+
+.fa-birthday-cake:before {
+  content: ""; }
+
+.fa-area-chart:before {
+  content: ""; }
+
+.fa-pie-chart:before {
+  content: ""; }
+
+.fa-line-chart:before {
+  content: ""; }
+
+.fa-lastfm:before {
+  content: ""; }
+
+.fa-lastfm-square:before {
+  content: ""; }
+
+.fa-toggle-off:before {
+  content: ""; }
+
+.fa-toggle-on:before {
+  content: ""; }
+
+.fa-bicycle:before {
+  content: ""; }
+
+.fa-bus:before {
+  content: ""; }
+
+.fa-ioxhost:before {
+  content: ""; }
+
+.fa-angellist:before {
+  content: ""; }
+
+.fa-cc:before {
+  content: ""; }
+
+.fa-shekel:before,
+.fa-sheqel:before,
+.fa-ils:before {
+  content: ""; }
+
+.fa-meanpath:before {
+  content: ""; }
+
+.fa-buysellads:before {
+  content: ""; }
+
+.fa-connectdevelop:before {
+  content: ""; }
+
+.fa-dashcube:before {
+  content: ""; }
+
+.fa-forumbee:before {
+  content: ""; }
+
+.fa-leanpub:before {
+  content: ""; }
+
+.fa-sellsy:before {
+  content: ""; }
+
+.fa-shirtsinbulk:before {
+  content: ""; }
+
+.fa-simplybuilt:before {
+  content: ""; }
+
+.fa-skyatlas:before {
+  content: ""; }
+
+.fa-cart-plus:before {
+  content: ""; }
+
+.fa-cart-arrow-down:before {
+  content: ""; }
+
+.fa-diamond:before {
+  content: ""; }
+
+.fa-ship:before {
+  content: ""; }
+
+.fa-user-secret:before {
+  content: ""; }
+
+.fa-motorcycle:before {
+  content: ""; }
+
+.fa-street-view:before {
+  content: ""; }
+
+.fa-heartbeat:before {
+  content: ""; }
+
+.fa-venus:before {
+  content: ""; }
+
+.fa-mars:before {
+  content: ""; }
+
+.fa-mercury:before {
+  content: ""; }
+
+.fa-intersex:before,
+.fa-transgender:before {
+  content: ""; }
+
+.fa-transgender-alt:before {
+  content: ""; }
+
+.fa-venus-double:before {
+  content: ""; }
+
+.fa-mars-double:before {
+  content: ""; }
+
+.fa-venus-mars:before {
+  content: ""; }
+
+.fa-mars-stroke:before {
+  content: ""; }
+
+.fa-mars-stroke-v:before {
+  content: ""; }
+
+.fa-mars-stroke-h:before {
+  content: ""; }
+
+.fa-neuter:before {
+  content: ""; }
+
+.fa-genderless:before {
+  content: ""; }
+
+.fa-facebook-official:before {
+  content: ""; }
+
+.fa-pinterest-p:before {
+  content: ""; }
+
+.fa-whatsapp:before {
+  content: ""; }
+
+.fa-server:before {
+  content: ""; }
+
+.fa-user-plus:before {
+  content: ""; }
+
+.fa-user-times:before {
+  content: ""; }
+
+.fa-hotel:before,
+.fa-bed:before {
+  content: ""; }
+
+.fa-viacoin:before {
+  content: ""; }
+
+.fa-train:before {
+  content: ""; }
+
+.fa-subway:before {
+  content: ""; }
+
+.fa-medium:before {
+  content: ""; }
+
+.fa-yc:before,
+.fa-y-combinator:before {
+  content: ""; }
+
+.fa-optin-monster:before {
+  content: ""; }
+
+.fa-opencart:before {
+  content: ""; }
+
+.fa-expeditedssl:before {
+  content: ""; }
+
+.fa-battery-4:before,
+.fa-battery-full:before {
+  content: ""; }
+
+.fa-battery-3:before,
+.fa-battery-three-quarters:before {
+  content: ""; }
+
+.fa-battery-2:before,
+.fa-battery-half:before {
+  content: ""; }
+
+.fa-battery-1:before,
+.fa-battery-quarter:before {
+  content: ""; }
+
+.fa-battery-0:before,
+.fa-battery-empty:before {
+  content: ""; }
+
+.fa-mouse-pointer:before {
+  content: ""; }
+
+.fa-i-cursor:before {
+  content: ""; }
+
+.fa-object-group:before {
+  content: ""; }
+
+.fa-object-ungroup:before {
+  content: ""; }
+
+.fa-sticky-note:before {
+  content: ""; }
+
+.fa-sticky-note-o:before {
+  content: ""; }
+
+.fa-cc-jcb:before {
+  content: ""; }
+
+.fa-cc-diners-club:before {
+  content: ""; }
+
+.fa-clone:before {
+  content: ""; }
+
+.fa-balance-scale:before {
+  content: ""; }
+
+.fa-hourglass-o:before {
+  content: ""; }
+
+.fa-hourglass-1:before,
+.fa-hourglass-start:before {
+  content: ""; }
+
+.fa-hourglass-2:before,
+.fa-hourglass-half:before {
+  content: ""; }
+
+.fa-hourglass-3:before,
+.fa-hourglass-end:before {
+  content: ""; }
+
+.fa-hourglass:before {
+  content: ""; }
+
+.fa-hand-grab-o:before,
+.fa-hand-rock-o:before {
+  content: ""; }
+
+.fa-hand-stop-o:before,
+.fa-hand-paper-o:before {
+  content: ""; }
+
+.fa-hand-scissors-o:before {
+  content: ""; }
+
+.fa-hand-lizard-o:before {
+  content: ""; }
+
+.fa-hand-spock-o:before {
+  content: ""; }
+
+.fa-hand-pointer-o:before {
+  content: ""; }
+
+.fa-hand-peace-o:before {
+  content: ""; }
+
+.fa-trademark:before {
+  content: ""; }
+
+.fa-registered:before {
+  content: ""; }
+
+.fa-creative-commons:before {
+  content: ""; }
+
+.fa-gg:before {
+  content: ""; }
+
+.fa-gg-circle:before {
+  content: ""; }
+
+.fa-tripadvisor:before {
+  content: ""; }
+
+.fa-odnoklassniki:before {
+  content: ""; }
+
+.fa-odnoklassniki-square:before {
+  content: ""; }
+
+.fa-get-pocket:before {
+  content: ""; }
+
+.fa-wikipedia-w:before {
+  content: ""; }
+
+.fa-safari:before {
+  content: ""; }
+
+.fa-chrome:before {
+  content: ""; }
+
+.fa-firefox:before {
+  content: ""; }
+
+.fa-opera:before {
+  content: ""; }
+
+.fa-internet-explorer:before {
+  content: ""; }
+
+.fa-tv:before,
+.fa-television:before {
+  content: ""; }
+
+.fa-contao:before {
+  content: ""; }
+
+.fa-500px:before {
+  content: ""; }
+
+.fa-amazon:before {
+  content: ""; }
+
+.fa-calendar-plus-o:before {
+  content: ""; }
+
+.fa-calendar-minus-o:before {
+  content: ""; }
+
+.fa-calendar-times-o:before {
+  content: ""; }
+
+.fa-calendar-check-o:before {
+  content: ""; }
+
+.fa-industry:before {
+  content: ""; }
+
+.fa-map-pin:before {
+  content: ""; }
+
+.fa-map-signs:before {
+  content: ""; }
+
+.fa-map-o:before {
+  content: ""; }
+
+.fa-map:before {
+  content: ""; }
+
+.fa-commenting:before {
+  content: ""; }
+
+.fa-commenting-o:before {
+  content: ""; }
+
+.fa-houzz:before {
+  content: ""; }
+
+.fa-vimeo:before {
+  content: ""; }
+
+.fa-black-tie:before {
+  content: ""; }
+
+.fa-fonticons:before {
+  content: ""; }
+
+.fa-reddit-alien:before {
+  content: ""; }
+
+.fa-edge:before {
+  content: ""; }
+
+.fa-credit-card-alt:before {
+  content: ""; }
+
+.fa-codiepie:before {
+  content: ""; }
+
+.fa-modx:before {
+  content: ""; }
+
+.fa-fort-awesome:before {
+  content: ""; }
+
+.fa-usb:before {
+  content: ""; }
+
+.fa-product-hunt:before {
+  content: ""; }
+
+.fa-mixcloud:before {
+  content: ""; }
+
+.fa-scribd:before {
+  content: ""; }
+
+.fa-pause-circle:before {
+  content: ""; }
+
+.fa-pause-circle-o:before {
+  content: ""; }
+
+.fa-stop-circle:before {
+  content: ""; }
+
+.fa-stop-circle-o:before {
+  content: ""; }
+
+.fa-shopping-bag:before {
+  content: ""; }
+
+.fa-shopping-basket:before {
+  content: ""; }
+
+.fa-hashtag:before {
+  content: ""; }
+
+.fa-bluetooth:before {
+  content: ""; }
+
+.fa-bluetooth-b:before {
+  content: ""; }
+
+.fa-percent:before {
+  content: ""; }
+
+.fa-gitlab:before {
+  content: ""; }
+
+.fa-wpbeginner:before {
+  content: ""; }
+
+.fa-wpforms:before {
+  content: ""; }
+
+.fa-envira:before {
+  content: ""; }
+
+.fa-universal-access:before {
+  content: ""; }
+
+.fa-wheelchair-alt:before {
+  content: ""; }
+
+.fa-question-circle-o:before {
+  content: ""; }
+
+.fa-blind:before {
+  content: ""; }
+
+.fa-audio-description:before {
+  content: ""; }
+
+.fa-volume-control-phone:before {
+  content: ""; }
+
+.fa-braille:before {
+  content: ""; }
+
+.fa-assistive-listening-systems:before {
+  content: ""; }
+
+.fa-asl-interpreting:before,
+.fa-american-sign-language-interpreting:before {
+  content: ""; }
+
+.fa-deafness:before,
+.fa-hard-of-hearing:before,
+.fa-deaf:before {
+  content: ""; }
+
+.fa-glide:before {
+  content: ""; }
+
+.fa-glide-g:before {
+  content: ""; }
+
+.fa-signing:before,
+.fa-sign-language:before {
+  content: ""; }
+
+.fa-low-vision:before {
+  content: ""; }
+
+.fa-viadeo:before {
+  content: ""; }
+
+.fa-viadeo-square:before {
+  content: ""; }
+
+.fa-snapchat:before {
+  content: ""; }
+
+.fa-snapchat-ghost:before {
+  content: ""; }
+
+.fa-snapchat-square:before {
+  content: ""; }
+
+.fa-pied-piper:before {
+  content: ""; }
+
+.fa-first-order:before {
+  content: ""; }
+
+.fa-yoast:before {
+  content: ""; }
+
+.fa-themeisle:before {
+  content: ""; }
+
+.fa-google-plus-circle:before,
+.fa-google-plus-official:before {
+  content: ""; }
+
+.fa-fa:before,
+.fa-font-awesome:before {
+  content: ""; }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0; }
+
+.sr-only-focusable:active, .sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto; }
+
+section.has-dark-background, section.has-dark-background h1, section.has-dark-background h2, section.has-dark-background h3, section.has-dark-background h4, section.has-dark-background h5, section.has-dark-background h6 {
+  color: #fff; }
+
+/*********************************************
+ * GLOBAL STYLES
+ *********************************************/
+body {
+  background: #fff;
+  background-color: #fff; }
+
+.reveal {
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-size: 38px;
+  font-weight: normal;
+  color: #222; }
+
+::selection {
+  color: #fff;
+  background: #f485a2;
+  text-shadow: none; }
+
+.reveal .slides > section,
+.reveal .slides > section > section {
+  line-height: 1.3;
+  font-weight: inherit; }
+
+/*********************************************
+ * HEADERS
+ *********************************************/
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  margin: 0 0 20px 0;
+  color: #222;
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-transform: uppercase;
+  text-shadow: none;
+  word-wrap: break-word; }
+
+.reveal h1 {
+  font-size: 2.5em; }
+
+.reveal h2 {
+  font-size: 1.6em; }
+
+.reveal h3 {
+  font-size: 1.3em; }
+
+.reveal h4 {
+  font-size: 1em; }
+
+.reveal h1 {
+  text-shadow: none; }
+
+/*********************************************
+ * OTHER
+ *********************************************/
+.reveal p {
+  margin: 20px 0;
+  line-height: 1.3; }
+
+/* Ensure certain elements are never larger than the slide itself */
+.reveal img,
+.reveal video,
+.reveal iframe {
+  max-width: 95%;
+  max-height: 95%; }
+
+.reveal strong,
+.reveal b {
+  font-weight: bold; }
+
+.reveal em {
+  font-style: italic; }
+
+.reveal ol,
+.reveal dl,
+.reveal ul {
+  display: inline-block;
+  text-align: left;
+  margin: 0 0 0 1em; }
+
+.reveal ol {
+  list-style-type: decimal; }
+
+.reveal ul {
+  list-style-type: disc; }
+
+.reveal ul ul {
+  list-style-type: square; }
+
+.reveal ul ul ul {
+  list-style-type: circle; }
+
+.reveal ul ul,
+.reveal ul ol,
+.reveal ol ol,
+.reveal ol ul {
+  display: block;
+  margin-left: 40px; }
+
+.reveal dt {
+  font-weight: bold; }
+
+.reveal dd {
+  margin-left: 40px; }
+
+.reveal q,
+.reveal blockquote {
+  quotes: none; }
+
+.reveal blockquote {
+  display: block;
+  position: relative;
+  width: 70%;
+  margin: 20px auto;
+  padding: 5px;
+  font-style: italic;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2); }
+
+.reveal blockquote p:first-child,
+.reveal blockquote p:last-child {
+  display: inline-block; }
+
+.reveal q {
+  font-style: italic; }
+
+.reveal pre {
+  display: block;
+  position: relative;
+  width: 90%;
+  margin: 20px auto;
+  text-align: left;
+  font-size: 0.55em;
+  font-family: monospace;
+  line-height: 1.2em;
+  word-wrap: break-word;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3); }
+
+.reveal code {
+  font-family: monospace; }
+
+.reveal pre code {
+  display: block;
+  padding: 5px;
+  overflow: auto;
+  max-height: 400px;
+  word-wrap: normal; }
+
+.reveal table {
+  margin: auto;
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.reveal table th {
+  font-weight: bold; }
+
+.reveal table th,
+.reveal table td {
+  text-align: left;
+  padding: 0.2em 0.5em 0.2em 0.5em;
+  border-bottom: 1px solid; }
+
+.reveal table th[align="center"],
+.reveal table td[align="center"] {
+  text-align: center; }
+
+.reveal table th[align="right"],
+.reveal table td[align="right"] {
+  text-align: right; }
+
+.reveal table tbody tr:last-child th,
+.reveal table tbody tr:last-child td {
+  border-bottom: none; }
+
+.reveal sup {
+  vertical-align: super; }
+
+.reveal sub {
+  vertical-align: sub; }
+
+.reveal small {
+  display: inline-block;
+  font-size: 0.6em;
+  line-height: 1.2em;
+  vertical-align: top; }
+
+.reveal small * {
+  vertical-align: top; }
+
+/*********************************************
+ * LINKS
+ *********************************************/
+.reveal a {
+  color: #E4154B;
+  text-decoration: none;
+  -webkit-transition: color .15s ease;
+  -moz-transition: color .15s ease;
+  transition: color .15s ease; }
+
+.reveal a:hover {
+  color: #ef567e;
+  text-shadow: none;
+  border: none; }
+
+.reveal .roll span:after {
+  color: #fff;
+  background: #9e0f34; }
+
+/*********************************************
+ * IMAGES
+ *********************************************/
+.reveal section img {
+  margin: 15px 0px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 4px solid #222;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); }
+
+.reveal section img.plain {
+  border: 0;
+  box-shadow: none; }
+
+.reveal a img {
+  -webkit-transition: all .15s linear;
+  -moz-transition: all .15s linear;
+  transition: all .15s linear; }
+
+.reveal a:hover img {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #E4154B;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
+
+/*********************************************
+ * NAVIGATION CONTROLS
+ *********************************************/
+.reveal .controls .navigate-left,
+.reveal .controls .navigate-left.enabled {
+  border-right-color: #E4154B; }
+
+.reveal .controls .navigate-right,
+.reveal .controls .navigate-right.enabled {
+  border-left-color: #E4154B; }
+
+.reveal .controls .navigate-up,
+.reveal .controls .navigate-up.enabled {
+  border-bottom-color: #E4154B; }
+
+.reveal .controls .navigate-down,
+.reveal .controls .navigate-down.enabled {
+  border-top-color: #E4154B; }
+
+.reveal .controls .navigate-left.enabled:hover {
+  border-right-color: #ef567e; }
+
+.reveal .controls .navigate-right.enabled:hover {
+  border-left-color: #ef567e; }
+
+.reveal .controls .navigate-up.enabled:hover {
+  border-bottom-color: #ef567e; }
+
+.reveal .controls .navigate-down.enabled:hover {
+  border-top-color: #ef567e; }
+
+/*********************************************
+ * PROGRESS BAR
+ *********************************************/
+.reveal .progress {
+  background: rgba(0, 0, 0, 0.2); }
+
+.reveal .progress span {
+  background: #E4154B;
+  -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
+
+.logo {
+  width: 100%;
+  height: 3em;
+  background: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%20standalone%3D%22no%22%3F%3E%0A%3C%21--%20Created%20with%20Inkscape%20%28http%3A//www.inkscape.org/%29%20--%3E%0A%0A%3Csvg%0A%20%20%20xmlns%3Adc%3D%22http%3A//purl.org/dc/elements/1.1/%22%0A%20%20%20xmlns%3Acc%3D%22http%3A//creativecommons.org/ns%23%22%0A%20%20%20xmlns%3Ardf%3D%22http%3A//www.w3.org/1999/02/22-rdf-syntax-ns%23%22%0A%20%20%20xmlns%3Asvg%3D%22http%3A//www.w3.org/2000/svg%22%0A%20%20%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%0A%20%20%20xmlns%3Asodipodi%3D%22http%3A//sodipodi.sourceforge.net/DTD/sodipodi-0.dtd%22%0A%20%20%20xmlns%3Ainkscape%3D%22http%3A//www.inkscape.org/namespaces/inkscape%22%0A%20%20%20id%3D%22svg2%22%0A%20%20%20version%3D%221.1%22%0A%20%20%20inkscape%3Aversion%3D%220.48.4%20r9939%22%0A%20%20%20width%3D%22148.81875%22%0A%20%20%20height%3D%2256.692875%22%0A%20%20%20xml%3Aspace%3D%22preserve%22%0A%20%20%20sodipodi%3Adocname%3D%22logo-CMYK.pdf%22%3E%3Cmetadata%0A%20%20%20%20%20id%3D%22metadata8%22%3E%3Crdf%3ARDF%3E%3Ccc%3AWork%0A%20%20%20%20%20%20%20%20%20rdf%3Aabout%3D%22%22%3E%3Cdc%3Aformat%3Eimage/svg%2Bxml%3C/dc%3Aformat%3E%3Cdc%3Atype%0A%20%20%20%20%20%20%20%20%20%20%20rdf%3Aresource%3D%22http%3A//purl.org/dc/dcmitype/StillImage%22%20/%3E%3Cdc%3Atitle%3E%3C/dc%3Atitle%3E%3C/cc%3AWork%3E%3C/rdf%3ARDF%3E%3C/metadata%3E%3Cdefs%0A%20%20%20%20%20id%3D%22defs6%22%3E%3CclipPath%0A%20%20%20%20%20%20%20clipPathUnits%3D%22userSpaceOnUse%22%0A%20%20%20%20%20%20%20id%3D%22clipPath30%22%3E%3Cpath%0A%20%20%20%20%20%20%20%20%20d%3D%22m%200%2C45.354%20119.055%2C0%20L%20119.055%2C0%200%2C0%200%2C45.354%20z%22%0A%20%20%20%20%20%20%20%20%20id%3D%22path32%22%20/%3E%3C/clipPath%3E%3C/defs%3E%3Csodipodi%3Anamedview%0A%20%20%20%20%20pagecolor%3D%22%23ffffff%22%0A%20%20%20%20%20bordercolor%3D%22%23666666%22%0A%20%20%20%20%20borderopacity%3D%221%22%0A%20%20%20%20%20objecttolerance%3D%2210%22%0A%20%20%20%20%20gridtolerance%3D%2210%22%0A%20%20%20%20%20guidetolerance%3D%2210%22%0A%20%20%20%20%20inkscape%3Apageopacity%3D%220%22%0A%20%20%20%20%20inkscape%3Apageshadow%3D%222%22%0A%20%20%20%20%20inkscape%3Awindow-width%3D%221562%22%0A%20%20%20%20%20inkscape%3Awindow-height%3D%221046%22%0A%20%20%20%20%20id%3D%22namedview4%22%0A%20%20%20%20%20showgrid%3D%22false%22%0A%20%20%20%20%20inkscape%3Azoom%3D%222.4257695%22%0A%20%20%20%20%20inkscape%3Acx%3D%2274.409378%22%0A%20%20%20%20%20inkscape%3Acy%3D%2228.346437%22%0A%20%20%20%20%20inkscape%3Awindow-x%3D%2283%22%0A%20%20%20%20%20inkscape%3Awindow-y%3D%2224%22%0A%20%20%20%20%20inkscape%3Awindow-maximized%3D%220%22%0A%20%20%20%20%20inkscape%3Acurrent-layer%3D%22g10%22%20/%3E%3Cg%0A%20%20%20%20%20id%3D%22g10%22%0A%20%20%20%20%20inkscape%3Agroupmode%3D%22layer%22%0A%20%20%20%20%20inkscape%3Alabel%3D%22logo-CMYK%22%0A%20%20%20%20%20transform%3D%22matrix%281.25%2C0%2C0%2C-1.25%2C0%2C56.692875%29%22%3E%3Cpath%0A%20%20%20%20%20%20%20d%3D%22m%2023.834%2C12.304%20-20.745%2C0%200%2C20.747%2020.745%2C0%200%2C-20.747%20z%22%0A%20%20%20%20%20%20%20style%3D%22fill%3A%23ed1952%3Bfill-opacity%3A1%3Bfill-rule%3Anonzero%3Bstroke%3Anone%22%0A%20%20%20%20%20%20%20id%3D%22path12%22%20/%3E%3Cpath%0A%20%20%20%20%20%20%20d%3D%22m%2046.655%2C12.304%20-20.746%2C0%200%2C20.747%2020.746%2C0%200%2C-20.747%20z%22%0A%20%20%20%20%20%20%20style%3D%22fill%3A%23ed1952%3Bfill-opacity%3A1%3Bfill-rule%3Anonzero%3Bstroke%3Anone%22%0A%20%20%20%20%20%20%20id%3D%22path14%22%20/%3E%3Cpath%0A%20%20%20%20%20%20%20d%3D%22m%2069.475%2C12.304%20-20.745%2C0%200%2C20.747%2020.745%2C0%200%2C-20.747%20z%22%0A%20%20%20%20%20%20%20style%3D%22fill%3A%23ed1952%3Bfill-opacity%3A1%3Bfill-rule%3Anonzero%3Bstroke%3Anone%22%0A%20%20%20%20%20%20%20id%3D%22path16%22%20/%3E%3Cpath%0A%20%20%20%20%20%20%20d%3D%22m%2034.208%2C1.931%20-20.747%2C0%200%2C20.747%2020.747%2C0%200%2C-20.747%20z%22%0A%20%20%20%20%20%20%20style%3D%22fill%3A%23ed1952%3Bfill-opacity%3A1%3Bfill-rule%3Anonzero%3Bstroke%3Anone%22%0A%20%20%20%20%20%20%20id%3D%22path18%22%20/%3E%3Cpath%0A%20%20%20%20%20%20%20d%3D%22m%2059.101%2C22.677%20-20.744%2C0%200%2C20.746%2020.744%2C0%200%2C-20.746%20z%22%0A%20%20%20%20%20%20%20style%3D%22fill%3A%23ed1952%3Bfill-opacity%3A1%3Bfill-rule%3Anonzero%3Bstroke%3Anone%22%0A%20%20%20%20%20%20%20id%3D%22path20%22%20/%3E%3Cg%0A%20%20%20%20%20%20%20id%3D%22g22%22%0A%20%20%20%20%20%20%20transform%3D%22translate%2878.1934%2C29.7222%29%22%3E%3Cpath%0A%20%20%20%20%20%20%20%20%20d%3D%22m%200%2C0%20-6.643%2C0%200%2C3.319%2017.12%2C0%200%2C-3.319%20-6.641%2C0%200%2C-17.374%20-3.836%2C0%20L%200%2C0%20z%22%0A%20%20%20%20%20%20%20%20%20style%3D%22fill%3A%23231f20%3Bfill-opacity%3A1%3Bfill-rule%3Anonzero%3Bstroke%3Anone%22%0A%20%20%20%20%20%20%20%20%20id%3D%22path24%22%20/%3E%3C/g%3E%3Cg%0A%20%20%20%20%20%20%20id%3D%22g26%22%3E%3Cg%0A%20%20%20%20%20%20%20%20%20id%3D%22g28%22%0A%20%20%20%20%20%20%20%20%20clip-path%3D%22url%28%23clipPath30%29%22%3E%3Cg%0A%20%20%20%20%20%20%20%20%20%20%20id%3D%22g34%22%0A%20%20%20%20%20%20%20%20%20%20%20transform%3D%22translate%28107.918%2C19.9521%29%22%3E%3Cpath%0A%20%20%20%20%20%20%20%20%20%20%20%20%20d%3D%22m%200%2C0%20c%200%2C-1.246%20-0.225%2C-2.371%20-0.672%2C-3.375%20-0.449%2C-1.004%20-1.06%2C-1.855%20-1.836%2C-2.557%20-0.775%2C-0.703%20-1.689%2C-1.242%20-2.75%2C-1.621%20-1.06%2C-0.381%20-2.211%2C-0.57%20-3.455%2C-0.57%20-1.242%2C0%20-2.394%2C0.189%20-3.455%2C0.57%20-1.061%2C0.379%20-1.982%2C0.918%20-2.766%2C1.621%20-0.785%2C0.702%20-1.398%2C1.553%20-1.834%2C2.557%20-0.439%2C1.004%20-0.658%2C2.129%20-0.658%2C3.375%20l%200%2C13.089%203.838%2C0%200%2C-12.958%20c%200%2C-0.504%200.08%2C-1.035%200.244%2C-1.59%200.164%2C-0.555%200.434%2C-1.066%200.813%2C-1.533%200.379%2C-0.467%200.879%2C-0.852%201.504%2C-1.153%200.621%2C-0.3%201.392%2C-0.451%202.314%2C-0.451%200.92%2C0%201.692%2C0.151%202.315%2C0.451%200.623%2C0.301%201.125%2C0.686%201.503%2C1.153%200.377%2C0.467%200.649%2C0.978%200.813%2C1.533%200.162%2C0.555%200.244%2C1.086%200.244%2C1.59%20l%200%2C12.958%203.838%2C0%20L%200%2C0%20z%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20style%3D%22fill%3A%23231f20%3Bfill-opacity%3A1%3Bfill-rule%3Anonzero%3Bstroke%3Anone%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20id%3D%22path36%22%20/%3E%3C/g%3E%3Cg%0A%20%20%20%20%20%20%20%20%20%20%20id%3D%22g38%22%0A%20%20%20%20%20%20%20%20%20%20%20transform%3D%22translate%2886.3457%2C9.4971%29%22%3E%3Cpath%0A%20%20%20%20%20%20%20%20%20%20%20%20%20d%3D%22m%200%2C0%20c%20-0.76%2C0.328%20-1.746%2C0.486%20-2.533%2C0.486%20-2.293%2C0%20-3.561%2C-1.443%20-3.561%2C-3.318%200%2C-1.861%201.239%2C-3.264%203.334%2C-3.264%200.535%2C0%200.959%2C0.053%201.297%2C0.131%20l%200%2C2.387%20-2.084%2C0%200%2C1.441%203.969%2C0%200%2C-4.929%20c%20-1.041%2C-0.262%20-2.125%2C-0.471%20-3.182%2C-0.471%20-3.179%2C0%20-5.39%2C1.48%20-5.39%2C4.574%200%2C3.135%202.056%2C4.891%205.39%2C4.891%201.141%2C0%202.041%2C-0.145%202.887%2C-0.381%20L%200%2C0%20z%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20style%3D%22fill%3A%23231f20%3Bfill-opacity%3A1%3Bfill-rule%3Anonzero%3Bstroke%3Anone%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20id%3D%22path40%22%20/%3E%3C/g%3E%3Cg%0A%20%20%20%20%20%20%20%20%20%20%20id%3D%22g42%22%0A%20%20%20%20%20%20%20%20%20%20%20transform%3D%22translate%2888.709%2C8.8682%29%22%3E%3Cpath%0A%20%20%20%20%20%20%20%20%20%20%20%20%20d%3D%22m%200%2C0%201.676%2C0%200%2C-1.533%200.029%2C0%20c%200.084%2C0.629%200.858%2C1.691%201.983%2C1.691%200.183%2C0%200.382%2C0%200.578%2C-0.053%20l%200%2C-1.771%20c%20-0.168%2C0.092%20-0.506%2C0.145%20-0.846%2C0.145%20-1.533%2C0%20-1.533%2C-1.784%20-1.533%2C-2.752%20l%200%2C-2.479%20L%200%2C-6.752%200%2C0%20z%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20style%3D%22fill%3A%23231f20%3Bfill-opacity%3A1%3Bfill-rule%3Anonzero%3Bstroke%3Anone%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20id%3D%22path44%22%20/%3E%3C/g%3E%3Cg%0A%20%20%20%20%20%20%20%20%20%20%20id%3D%22g46%22%0A%20%20%20%20%20%20%20%20%20%20%20transform%3D%22translate%2896.6758%2C3.2432%29%22%3E%3Cpath%0A%20%20%20%20%20%20%20%20%20%20%20%20%20d%3D%22m%200%2C0%20c%200.578%2C0%201.027%2C0.236%201.322%2C0.604%200.311%2C0.38%200.395%2C0.865%200.395%2C1.39%20l%20-0.817%2C0%20C%200.057%2C1.994%20-1.195%2C1.863%20-1.195%2C0.826%20-1.195%2C0.25%20-0.676%2C0%200%2C0%20m%20-2.211%2C5.271%20c%200.732%2C0.315%201.719%2C0.512%202.522%2C0.512%202.209%2C0%203.123%2C-0.853%203.123%2C-2.845%20l%200%2C-0.866%20c%200%2C-0.681%200.015%2C-1.193%200.029%2C-1.691%200.014%2C-0.512%200.041%2C-0.983%200.084%2C-1.508%20l%20-1.66%2C0%20c%20-0.071%2C0.354%20-0.071%2C0.801%20-0.084%2C1.01%20l%20-0.03%2C0%20c%20-0.435%2C-0.746%20-1.38%2C-1.166%20-2.238%2C-1.166%20-1.279%2C0%20-2.533%2C0.72%20-2.533%2C2.006%200%2C1.007%200.519%2C1.597%201.238%2C1.925%200.719%2C0.329%201.647%2C0.395%202.436%2C0.395%20l%201.041%2C0%20c%200%2C1.088%20-0.52%2C1.455%20-1.633%2C1.455%20-0.801%2C0%20-1.604%2C-0.289%20-2.236%2C-0.734%20l%20-0.059%2C1.507%20z%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20style%3D%22fill%3A%23231f20%3Bfill-opacity%3A1%3Bfill-rule%3Anonzero%3Bstroke%3Anone%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20id%3D%22path48%22%20/%3E%3C/g%3E%3Cg%0A%20%20%20%20%20%20%20%20%20%20%20id%3D%22g50%22%0A%20%20%20%20%20%20%20%20%20%20%20transform%3D%22translate%28101.6582%2C8.8682%29%22%3E%3Cpath%0A%20%20%20%20%20%20%20%20%20%20%20%20%20d%3D%22m%200%2C0%205.742%2C0%200%2C-1.441%20-3.603%2C-3.948%203.73%2C0%200%2C-1.363%20-6.023%2C0%200%2C1.43%203.672%2C3.959%20L%200%2C-1.363%200%2C0%20z%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20style%3D%22fill%3A%23231f20%3Bfill-opacity%3A1%3Bfill-rule%3Anonzero%3Bstroke%3Anone%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20id%3D%22path52%22%20/%3E%3C/g%3E%3Cpath%0A%20%20%20%20%20%20%20%20%20%20%20d%3D%22m%20109.055%2C1.931%206.91%2C0%200%2C6.912%20-6.91%2C0%200%2C-6.912%20z%22%0A%20%20%20%20%20%20%20%20%20%20%20style%3D%22fill%3A%23ed1952%3Bfill-opacity%3A1%3Bfill-rule%3Anonzero%3Bstroke%3Anone%22%0A%20%20%20%20%20%20%20%20%20%20%20id%3D%22path54%22%20/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E") top 0.7em right 0.6em no-repeat, url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%20standalone%3D%22no%22%3F%3E%0A%3Csvg%0A%20%20%20xmlns%3Adc%3D%22http%3A//purl.org/dc/elements/1.1/%22%0A%20%20%20xmlns%3Acc%3D%22http%3A//creativecommons.org/ns%23%22%0A%20%20%20xmlns%3Ardf%3D%22http%3A//www.w3.org/1999/02/22-rdf-syntax-ns%23%22%0A%20%20%20xmlns%3Asvg%3D%22http%3A//www.w3.org/2000/svg%22%0A%20%20%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%0A%20%20%20viewBox%3D%220%200%20531.5%20531.5%22%0A%20%20%20height%3D%22531.5%22%0A%20%20%20width%3D%22531.5%22%0A%20%20%20xml%3Aspace%3D%22preserve%22%0A%20%20%20version%3D%221.1%22%0A%20%20%20id%3D%22svg2%22%3E%3Cmetadata%0A%20%20%20%20%20id%3D%22metadata8%22%3E%3Crdf%3ARDF%3E%3Ccc%3AWork%0A%20%20%20%20%20%20%20%20%20rdf%3Aabout%3D%22%22%3E%3Cdc%3Aformat%3Eimage/svg%2Bxml%3C/dc%3Aformat%3E%3Cdc%3Atype%0A%20%20%20%20%20%20%20%20%20%20%20rdf%3Aresource%3D%22http%3A//purl.org/dc/dcmitype/StillImage%22%20/%3E%3Cdc%3Atitle%3E%3C/dc%3Atitle%3E%3C/cc%3AWork%3E%3C/rdf%3ARDF%3E%3C/metadata%3E%3Cdefs%0A%20%20%20%20%20id%3D%22defs6%22%20/%3E%3Cg%0A%20%20%20%20%20transform%3D%22matrix%281.25%2C0%2C0%2C-1.25%2C0%2C531.5%29%22%0A%20%20%20%20%20id%3D%22g10%22%3E%3Cg%0A%20%20%20%20%20%20%20transform%3D%22scale%280.1%2C0.1%29%22%0A%20%20%20%20%20%20%20id%3D%22g12%22%3E%3Cpath%0A%20%20%20%20%20%20%20%20%20id%3D%22path14%22%0A%20%20%20%20%20%20%20%20%20style%3D%22fill%3A%23e61d4c%3Bfill-opacity%3A1%3Bfill-rule%3Anonzero%3Bstroke%3Anone%22%0A%20%20%20%20%20%20%20%20%20d%3D%22m%20938.777%2C1268.36%20c%200%2C0%200%2C-41.35%20-41.343%2C-41.35%20l%20-496.086%2C0%20c%200%2C0%20-41.348%2C0%20-41.348%2C41.35%20l%200%2C471.12%20c%200%2C0%200%2C41.35%2041.348%2C41.35%20l%20496.086%2C0%20c%200%2C0%2041.343%2C0%2041.343%2C-41.35%20l%200%2C-471.12%22%20/%3E%3Cpath%0A%20%20%20%20%20%20%20%20%20id%3D%22path16%22%0A%20%20%20%20%20%20%20%20%20style%3D%22fill%3A%23f8ab3e%3Bfill-opacity%3A1%3Bfill-rule%3Anonzero%3Bstroke%3Anone%22%0A%20%20%20%20%20%20%20%20%20d%3D%22m%201622.21%2C1268.36%20c%200%2C0%200%2C-41.35%20-41.35%2C-41.35%20l%20-496.09%2C0%20c%200%2C0%20-41.34%2C0%20-41.34%2C41.35%20l%200%2C471.12%20c%200%2C0%200%2C41.35%2041.34%2C41.35%20l%20496.09%2C0%20c%200%2C0%2041.35%2C0%2041.35%2C-41.35%20l%200%2C-471.12%22%20/%3E%3Cpath%0A%20%20%20%20%20%20%20%20%20id%3D%22path18%22%0A%20%20%20%20%20%20%20%20%20style%3D%22fill%3A%23000000%3Bfill-opacity%3A1%3Bfill-rule%3Anonzero%3Bstroke%3Anone%22%0A%20%20%20%20%20%20%20%20%20d%3D%22m%20573.805%2C1970.7%200%2C1100.94%20-206.032%2C0%200%2C-1100.94%20206.032%2C0%20z%20m%201071.035%2C920.07%20c%20-83.35%2C169.86%20-261.08%2C218.62%20-432.51%2C218.62%20-202.89%2C-1.57%20-426.221%2C-94.37%20-426.221%2C-320.85%200%2C-246.92%20207.606%2C-306.69%20432.511%2C-333.43%20146.27%2C-15.72%20254.79%2C-58.19%20254.79%2C-161.99%200%2C-119.53%20-122.68%2C-165.14%20-253.22%2C-165.14%20-133.68%2C0%20-261.077%2C53.47%20-309.835%2C174.57%20l%20-173.003%2C-89.64%20c%2081.785%2C-201.32%20254.789%2C-270.52%20479.698%2C-270.52%20245.35%2C0%20462.39%2C105.38%20462.39%2C350.73%200%2C262.65%20-213.89%2C322.42%20-443.52%2C350.73%20-132.11%2C15.72%20-245.35%2C42.46%20-245.35%2C138.4%200%2C81.79%2073.92%2C146.27%20228.05%2C146.27%20119.53%2C0%20223.33%2C-59.77%20261.08%2C-122.68%20l%20165.14%2C84.93%20z%20m%20613.38%2C180.87%20c%20-135.26%2C0%20-297.26%2C0%20-432.52%2C0%20l%200%2C-1100.94%20c%20135.26%2C0%20297.26%2C0%20432.52%2C0%20385.33%2C0%20555.19%2C281.53%20550.47%2C559.91%20-4.72%2C272.09%20-173.01%2C541.03%20-550.47%2C541.03%20z%20m%20-226.48%2C-196.6%20226.48%2C0%20c%20239.06%2C0%20339.72%2C-171.43%20344.44%2C-342.86%204.71%2C-179.3%20-94.37%2C-361.74%20-344.44%2C-361.74%20l%20-226.48%2C0%200%2C704.6%20z%20m%201758.34%2C15.73%20c%20-83.36%2C169.86%20-261.08%2C218.62%20-432.51%2C218.62%20-202.89%2C-1.57%20-426.22%2C-94.37%20-426.22%2C-320.85%200%2C-246.92%20207.6%2C-306.69%20432.51%2C-333.43%20146.27%2C-15.72%20254.79%2C-58.19%20254.79%2C-161.99%200%2C-119.53%20-122.68%2C-165.14%20-253.22%2C-165.14%20-133.68%2C0%20-261.08%2C53.47%20-309.84%2C174.57%20l%20-173%2C-89.64%20c%2081.78%2C-201.32%20254.79%2C-270.52%20479.7%2C-270.52%20245.35%2C0%20462.39%2C105.38%20462.39%2C350.73%200%2C262.65%20-213.9%2C322.42%20-443.52%2C350.73%20-132.11%2C15.72%20-245.35%2C42.46%20-245.35%2C138.4%200%2C81.79%2073.92%2C146.27%20228.05%2C146.27%20119.53%2C0%20223.33%2C-59.77%20261.08%2C-122.68%20l%20165.14%2C84.93%22%20/%3E%3Cpath%0A%20%20%20%20%20%20%20%20%20id%3D%22path20%22%0A%20%20%20%20%20%20%20%20%20style%3D%22fill%3Anone%3Bstroke%3A%23000000%3Bstroke-width%3A4.90817022%3Bstroke-linecap%3Abutt%3Bstroke-linejoin%3Amiter%3Bstroke-miterlimit%3A52.42580032%3Bstroke-dasharray%3Anone%3Bstroke-opacity%3A1%22%0A%20%20%20%20%20%20%20%20%20d%3D%22m%20573.805%2C1970.7%200%2C1100.94%20-206.032%2C0%200%2C-1100.94%20206.032%2C0%20z%20m%201071.035%2C920.07%20c%20-83.35%2C169.86%20-261.08%2C218.62%20-432.51%2C218.62%20-202.89%2C-1.57%20-426.221%2C-94.37%20-426.221%2C-320.85%200%2C-246.92%20207.606%2C-306.69%20432.511%2C-333.43%20146.27%2C-15.72%20254.79%2C-58.19%20254.79%2C-161.99%200%2C-119.53%20-122.68%2C-165.14%20-253.22%2C-165.14%20-133.68%2C0%20-261.077%2C53.47%20-309.835%2C174.57%20l%20-173.003%2C-89.64%20c%2081.785%2C-201.32%20254.789%2C-270.52%20479.698%2C-270.52%20245.35%2C0%20462.39%2C105.38%20462.39%2C350.73%200%2C262.65%20-213.89%2C322.42%20-443.52%2C350.73%20-132.11%2C15.72%20-245.35%2C42.46%20-245.35%2C138.4%200%2C81.79%2073.92%2C146.27%20228.05%2C146.27%20119.53%2C0%20223.33%2C-59.77%20261.08%2C-122.68%20l%20165.14%2C84.93%20z%20m%20613.38%2C180.87%20c%20-135.26%2C0%20-297.26%2C0%20-432.52%2C0%20l%200%2C-1100.94%20c%20135.26%2C0%20297.26%2C0%20432.52%2C0%20385.33%2C0%20555.19%2C281.53%20550.47%2C559.91%20-4.72%2C272.09%20-173.01%2C541.03%20-550.47%2C541.03%20z%20m%20-226.48%2C-196.6%20226.48%2C0%20c%20239.06%2C0%20339.72%2C-171.43%20344.44%2C-342.86%204.71%2C-179.3%20-94.37%2C-361.74%20-344.44%2C-361.74%20l%20-226.48%2C0%200%2C704.6%20z%20m%201758.34%2C15.73%20c%20-83.36%2C169.86%20-261.08%2C218.62%20-432.51%2C218.62%20-202.89%2C-1.57%20-426.22%2C-94.37%20-426.22%2C-320.85%200%2C-246.92%20207.6%2C-306.69%20432.51%2C-333.43%20146.27%2C-15.72%20254.79%2C-58.19%20254.79%2C-161.99%200%2C-119.53%20-122.68%2C-165.14%20-253.22%2C-165.14%20-133.68%2C0%20-261.08%2C53.47%20-309.84%2C174.57%20l%20-173%2C-89.64%20c%2081.78%2C-201.32%20254.79%2C-270.52%20479.7%2C-270.52%20245.35%2C0%20462.39%2C105.38%20462.39%2C350.73%200%2C262.65%20-213.9%2C322.42%20-443.52%2C350.73%20-132.11%2C15.72%20-245.35%2C42.46%20-245.35%2C138.4%200%2C81.79%2073.92%2C146.27%20228.05%2C146.27%20119.53%2C0%20223.33%2C-59.77%20261.08%2C-122.68%20l%20165.14%2C84.93%20z%22%20/%3E%3Cpath%0A%20%20%20%20%20%20%20%20%20id%3D%22path22%22%0A%20%20%20%20%20%20%20%20%20style%3D%22fill%3A%23000000%3Bfill-opacity%3A1%3Bfill-rule%3Anonzero%3Bstroke%3Anone%22%0A%20%20%20%20%20%20%20%20%20d%3D%22m%201841.78%2C1225.16%2025.4%2C0%20-55.39%2C123.48%20-25.4%2C0%20-55.39%2C-123.48%2025.22%2C0%2010.59%2C23.29%2064.56%2C0%2010.41%2C-23.29%20z%20m%20-19.76%2C44.99%20-45.86%2C0%2022.93%2C52.56%2022.93%2C-52.56%20z%20m%20140.76%2C1.94%20-60.5%2C76.55%20-18.88%2C0%200%2C-123.48%2023.29%2C0%200%2C83.27%2064.91%2C-83.44%200%2C0.17%2014.47%2C0%200%2C123.66%20-23.29%2C0%200%2C-76.73%20z%20m%2095.44%2C76.55%20c%20-15.17%2C0%20-33.34%2C0%20-48.51%2C0%20l%200%2C-123.48%20c%2015.17%2C0%2033.34%2C0%2048.51%2C0%2043.21%2C0%2062.27%2C31.58%2061.74%2C62.8%20-0.53%2C30.52%20-19.41%2C60.68%20-61.74%2C60.68%20z%20m%20-25.41%2C-22.05%2025.41%2C0%20c%2026.81%2C0%2038.1%2C-19.22%2038.63%2C-38.45%200.53%2C-20.11%20-10.59%2C-40.57%20-38.63%2C-40.57%20l%20-25.41%2C0%200%2C79.02%20z%20m%20192.81%2C22.05%20c%20-15.17%2C0%20-33.34%2C0%20-48.51%2C0%20l%200%2C-123.48%20c%2015.17%2C0%2033.34%2C0%2048.51%2C0%2043.22%2C0%2062.27%2C31.58%2061.74%2C62.8%20-0.53%2C30.52%20-19.41%2C60.68%20-61.74%2C60.68%20z%20m%20-25.4%2C-22.05%2025.4%2C0%20c%2026.81%2C0%2038.1%2C-19.22%2038.63%2C-38.45%200.53%2C-20.11%20-10.59%2C-40.57%20-38.63%2C-40.57%20l%20-25.4%2C0%200%2C79.02%20z%20m%20204.44%2C-101.43%2025.4%2C0%20-55.39%2C123.48%20-25.4%2C0%20-55.39%2C-123.48%2025.23%2C0%2010.58%2C23.29%2064.56%2C0%2010.41%2C-23.29%20z%20m%20-19.76%2C44.99%20-45.86%2C0%2022.93%2C52.56%2022.93%2C-52.56%20z%20m%2071.27%2C-44.99%2023.29%2C0%200%2C102.32%2039.16%2C0%200%2C21.16%20c%20-35.81%2C0%20-65.98%2C0%20-101.61%2C0%20l%200%2C-21.16%2039.16%2C0%200%2C-102.32%20z%20m%20178.52%2C0%2025.4%2C0%20-55.39%2C123.48%20-25.4%2C0%20-55.39%2C-123.48%2025.22%2C0%2010.59%2C23.29%2064.56%2C0%2010.41%2C-23.29%20z%20m%20-19.76%2C44.99%20-45.86%2C0%2022.93%2C52.56%2022.93%2C-52.56%20z%20m%20191.92%2C58.21%20c%20-9.35%2C19.05%20-29.28%2C24.52%20-48.51%2C24.52%20-22.75%2C-0.18%20-47.8%2C-10.59%20-47.8%2C-35.99%200%2C-27.69%2023.28%2C-34.4%2048.51%2C-37.39%2016.4%2C-1.77%2028.57%2C-6.53%2028.57%2C-18.17%200%2C-13.41%20-13.76%2C-18.53%20-28.4%2C-18.53%20-14.99%2C0%20-29.28%2C6%20-34.75%2C19.58%20l%20-19.4%2C-10.05%20c%209.17%2C-22.58%2028.58%2C-30.34%2053.8%2C-30.34%2027.52%2C0%2051.86%2C11.82%2051.86%2C39.34%200%2C29.46%20-23.99%2C36.16%20-49.74%2C39.33%20-14.82%2C1.77%20-27.52%2C4.77%20-27.52%2C15.53%200%2C9.17%208.29%2C16.4%2025.58%2C16.4%2013.4%2C0%2025.05%2C-6.7%2029.28%2C-13.76%20l%2018.52%2C9.53%20z%20m%20118.72%2C-71.62%20c%20-8.12%2C-8.11%20-20.29%2C-12.52%20-31.05%2C-12.52%20-30.52%2C0%20-42.33%2C21.34%20-42.51%2C41.8%20-0.18%2C20.64%2012.7%2C42.87%2042.51%2C42.87%2010.76%2C0%2021.7%2C-3.71%2029.81%2C-11.64%20l%2015.53%2C14.99%20c%20-12.7%2C12.52%20-28.58%2C18.87%20-45.34%2C18.87%20-44.63%2C0%20-65.62%2C-32.81%20-65.44%2C-65.09%200.17%2C-32.1%2019.58%2C-63.68%2065.44%2C-63.68%2017.82%2C0%2034.22%2C5.82%2046.92%2C18.35%20l%20-15.87%2C16.05%20z%20m%2056.27%2C-31.58%200%2C123.48%20-23.11%2C0%200%2C-123.48%2023.11%2C0%20z%20m%20117.83%2C22.94%20-69.32%2C0%200%2C27.87%2066.85%2C0%200%2C21.69%20-66.85%2C0%200%2C28.41%2069.32%2C0%200%2C22.57%20-92.43%2C0%20c%200%2C-41.1%200%2C-82.37%200%2C-123.48%20l%2092.43%2C0%200%2C22.94%20z%20m%20106.72%2C23.99%20-60.5%2C76.55%20-18.88%2C0%200%2C-123.48%2023.29%2C0%200%2C83.27%2064.91%2C-83.44%200%2C0.17%2014.47%2C0%200%2C123.66%20-23.29%2C0%200%2C-76.73%20z%20m%20141.48%2C-15.35%20c%20-8.12%2C-8.11%20-20.29%2C-12.52%20-31.05%2C-12.52%20-30.52%2C0%20-42.34%2C21.34%20-42.51%2C41.8%20-0.18%2C20.64%2012.7%2C42.87%2042.51%2C42.87%2010.76%2C0%2021.7%2C-3.71%2029.81%2C-11.64%20l%2015.52%2C14.99%20c%20-12.7%2C12.52%20-28.57%2C18.87%20-45.33%2C18.87%20-44.63%2C0%20-65.62%2C-32.81%20-65.45%2C-65.09%200.18%2C-32.1%2019.58%2C-63.68%2065.45%2C-63.68%2017.82%2C0%2034.22%2C5.82%2046.92%2C18.35%20l%20-15.87%2C16.05%20z%20m%20124.88%2C-8.64%20-69.32%2C0%200%2C27.87%2066.85%2C0%200%2C21.69%20-66.85%2C0%200%2C28.41%2069.32%2C0%200%2C22.57%20-92.43%2C0%20c%200%2C-41.1%200%2C-82.37%200%2C-123.48%20l%2092.43%2C0%200%2C22.94%22%20/%3E%3Cpath%0A%20%20%20%20%20%20%20%20%20id%3D%22path24%22%0A%20%20%20%20%20%20%20%20%20style%3D%22fill%3Anone%3Bstroke%3A%23000000%3Bstroke-width%3A1%3Bstroke-linecap%3Abutt%3Bstroke-linejoin%3Amiter%3Bstroke-miterlimit%3A5.88002014%3Bstroke-dasharray%3Anone%3Bstroke-opacity%3A1%22%0A%20%20%20%20%20%20%20%20%20d%3D%22m%201841.78%2C1225.16%2025.4%2C0%20-55.39%2C123.48%20-25.4%2C0%20-55.39%2C-123.48%2025.22%2C0%2010.59%2C23.29%2064.56%2C0%2010.41%2C-23.29%20z%20m%20-19.76%2C44.99%20-45.86%2C0%2022.93%2C52.56%2022.93%2C-52.56%20z%20m%20140.76%2C1.94%20-60.5%2C76.55%20-18.88%2C0%200%2C-123.48%2023.29%2C0%200%2C83.27%2064.91%2C-83.44%200%2C0.17%2014.47%2C0%200%2C123.66%20-23.29%2C0%200%2C-76.73%20z%20m%2095.44%2C76.55%20c%20-15.17%2C0%20-33.34%2C0%20-48.51%2C0%20l%200%2C-123.48%20c%2015.17%2C0%2033.34%2C0%2048.51%2C0%2043.21%2C0%2062.27%2C31.58%2061.74%2C62.8%20-0.53%2C30.52%20-19.41%2C60.68%20-61.74%2C60.68%20z%20m%20-25.41%2C-22.05%2025.41%2C0%20c%2026.81%2C0%2038.1%2C-19.22%2038.63%2C-38.45%200.53%2C-20.11%20-10.59%2C-40.57%20-38.63%2C-40.57%20l%20-25.41%2C0%200%2C79.02%20z%20m%20192.81%2C22.05%20c%20-15.17%2C0%20-33.34%2C0%20-48.51%2C0%20l%200%2C-123.48%20c%2015.17%2C0%2033.34%2C0%2048.51%2C0%2043.22%2C0%2062.27%2C31.58%2061.74%2C62.8%20-0.53%2C30.52%20-19.41%2C60.68%20-61.74%2C60.68%20z%20m%20-25.4%2C-22.05%2025.4%2C0%20c%2026.81%2C0%2038.1%2C-19.22%2038.63%2C-38.45%200.53%2C-20.11%20-10.59%2C-40.57%20-38.63%2C-40.57%20l%20-25.4%2C0%200%2C79.02%20z%20m%20204.44%2C-101.43%2025.4%2C0%20-55.39%2C123.48%20-25.4%2C0%20-55.39%2C-123.48%2025.23%2C0%2010.58%2C23.29%2064.56%2C0%2010.41%2C-23.29%20z%20m%20-19.76%2C44.99%20-45.86%2C0%2022.93%2C52.56%2022.93%2C-52.56%20z%20m%2071.27%2C-44.99%2023.29%2C0%200%2C102.32%2039.16%2C0%200%2C21.16%20c%20-35.81%2C0%20-65.98%2C0%20-101.61%2C0%20l%200%2C-21.16%2039.16%2C0%200%2C-102.32%20z%20m%20178.52%2C0%2025.4%2C0%20-55.39%2C123.48%20-25.4%2C0%20-55.39%2C-123.48%2025.22%2C0%2010.59%2C23.29%2064.56%2C0%2010.41%2C-23.29%20z%20m%20-19.76%2C44.99%20-45.86%2C0%2022.93%2C52.56%2022.93%2C-52.56%20z%20m%20191.92%2C58.21%20c%20-9.35%2C19.05%20-29.28%2C24.52%20-48.51%2C24.52%20-22.75%2C-0.18%20-47.8%2C-10.59%20-47.8%2C-35.99%200%2C-27.69%2023.28%2C-34.4%2048.51%2C-37.39%2016.4%2C-1.77%2028.57%2C-6.53%2028.57%2C-18.17%200%2C-13.41%20-13.76%2C-18.53%20-28.4%2C-18.53%20-14.99%2C0%20-29.28%2C6%20-34.75%2C19.58%20l%20-19.4%2C-10.05%20c%209.17%2C-22.58%2028.58%2C-30.34%2053.8%2C-30.34%2027.52%2C0%2051.86%2C11.82%2051.86%2C39.34%200%2C29.46%20-23.99%2C36.16%20-49.74%2C39.33%20-14.82%2C1.77%20-27.52%2C4.77%20-27.52%2C15.53%200%2C9.17%208.29%2C16.4%2025.58%2C16.4%2013.4%2C0%2025.05%2C-6.7%2029.28%2C-13.76%20l%2018.52%2C9.53%20z%20m%20118.72%2C-71.62%20c%20-8.12%2C-8.11%20-20.29%2C-12.52%20-31.05%2C-12.52%20-30.52%2C0%20-42.33%2C21.34%20-42.51%2C41.8%20-0.18%2C20.64%2012.7%2C42.87%2042.51%2C42.87%2010.76%2C0%2021.7%2C-3.71%2029.81%2C-11.64%20l%2015.53%2C14.99%20c%20-12.7%2C12.52%20-28.58%2C18.87%20-45.34%2C18.87%20-44.63%2C0%20-65.62%2C-32.81%20-65.44%2C-65.09%200.17%2C-32.1%2019.58%2C-63.68%2065.44%2C-63.68%2017.82%2C0%2034.22%2C5.82%2046.92%2C18.35%20l%20-15.87%2C16.05%20z%20m%2056.27%2C-31.58%200%2C123.48%20-23.11%2C0%200%2C-123.48%2023.11%2C0%20z%20m%20117.83%2C22.94%20-69.32%2C0%200%2C27.87%2066.85%2C0%200%2C21.69%20-66.85%2C0%200%2C28.41%2069.32%2C0%200%2C22.57%20-92.43%2C0%20c%200%2C-41.1%200%2C-82.37%200%2C-123.48%20l%2092.43%2C0%200%2C22.94%20z%20m%20106.72%2C23.99%20-60.5%2C76.55%20-18.88%2C0%200%2C-123.48%2023.29%2C0%200%2C83.27%2064.91%2C-83.44%200%2C0.17%2014.47%2C0%200%2C123.66%20-23.29%2C0%200%2C-76.73%20z%20m%20141.48%2C-15.35%20c%20-8.12%2C-8.11%20-20.29%2C-12.52%20-31.05%2C-12.52%20-30.52%2C0%20-42.34%2C21.34%20-42.51%2C41.8%20-0.18%2C20.64%2012.7%2C42.87%2042.51%2C42.87%2010.76%2C0%2021.7%2C-3.71%2029.81%2C-11.64%20l%2015.52%2C14.99%20c%20-12.7%2C12.52%20-28.57%2C18.87%20-45.33%2C18.87%20-44.63%2C0%20-65.62%2C-32.81%20-65.45%2C-65.09%200.18%2C-32.1%2019.58%2C-63.68%2065.45%2C-63.68%2017.82%2C0%2034.22%2C5.82%2046.92%2C18.35%20l%20-15.87%2C16.05%20z%20m%20124.88%2C-8.64%20-69.32%2C0%200%2C27.87%2066.85%2C0%200%2C21.69%20-66.85%2C0%200%2C28.41%2069.32%2C0%200%2C22.57%20-92.43%2C0%20c%200%2C-41.1%200%2C-82.37%200%2C-123.48%20l%2092.43%2C0%200%2C22.94%20z%22%20/%3E%3Cpath%0A%20%20%20%20%20%20%20%20%20id%3D%22path26%22%0A%20%20%20%20%20%20%20%20%20style%3D%22fill%3A%23000000%3Bfill-opacity%3A1%3Bfill-rule%3Anonzero%3Bstroke%3Anone%22%0A%20%20%20%20%20%20%20%20%20d%3D%22m%201766.98%2C1436.84%200%2C123.49%20-23.11%2C0%200%2C-123.49%2023.11%2C0%20z%20m%20106.9%2C46.93%20-60.5%2C76.56%20-18.88%2C0%200%2C-123.49%2023.29%2C0%200%2C83.27%2064.91%2C-83.44%200%2C0.17%2014.47%2C0%200%2C123.66%20-23.29%2C0%200%2C-76.73%20z%20m%2080.44%2C-46.93%2023.28%2C0%200%2C102.32%2039.16%2C0%200%2C21.17%20c%20-35.8%2C0%20-65.97%2C0%20-101.6%2C0%20l%200%2C-21.17%2039.16%2C0%200%2C-102.32%20z%20m%20172.52%2C22.94%20-69.33%2C0%200%2C27.87%2066.86%2C0%200%2C21.7%20-66.86%2C0%200%2C28.4%2069.33%2C0%200%2C22.58%20-92.44%2C0%20c%200%2C-41.11%200%2C-82.38%200%2C-123.49%20l%2092.44%2C0%200%2C22.94%20z%20m%20131.41%2C-21.35%20-37.39%2C42.16%20c%2023.46%2C4.77%2031.22%2C21.88%2031.22%2C38.81%200%2C21.34%20-15.35%2C40.75%20-44.45%2C40.93%20-19.58%2C0%20-39.16%2C0.17%20-58.74%2C0.17%20l%200%2C-123.66%2023.28%2C0%200%2C41.28%2022.4%2C0%2035.99%2C-41.28%2027.69%2C0%200%2C1.59%20z%20m%20-50.62%2C100.2%20c%2014.64%2C0%2021.17%2C-9.88%2021.17%2C-19.76%200%2C-9.88%20-6.36%2C-19.76%20-21.17%2C-19.76%20l%20-35.46%2C0%200%2C39.52%2035.46%2C0%20z%20m%20162.11%2C-101.79%2025.4%2C0%20-55.39%2C123.49%20-25.4%2C0%20-55.39%2C-123.49%2025.22%2C0%2010.59%2C23.29%2064.56%2C0%2010.41%2C-23.29%20z%20m%20-19.76%2C44.99%20-45.86%2C0%2022.93%2C52.56%2022.93%2C-52.56%20z%20m%20145.18%2C-13.41%20c%20-8.12%2C-8.11%20-20.29%2C-12.52%20-31.05%2C-12.52%20-30.52%2C0%20-42.33%2C21.34%20-42.51%2C41.8%20-0.18%2C20.64%2012.7%2C42.87%2042.51%2C42.87%2010.76%2C0%2021.7%2C-3.71%2029.81%2C-11.64%20l%2015.53%2C14.99%20c%20-12.7%2C12.52%20-28.58%2C18.87%20-45.34%2C18.87%20-44.63%2C0%20-65.62%2C-32.81%20-65.44%2C-65.09%200.17%2C-32.1%2019.58%2C-63.68%2065.44%2C-63.68%2017.82%2C0%2034.22%2C5.82%2046.92%2C18.35%20l%20-15.87%2C16.05%20z%20m%2062.97%2C-31.58%2023.29%2C0%200%2C102.32%2039.16%2C0%200%2C21.17%20c%20-35.81%2C0%20-65.98%2C0%20-101.61%2C0%20l%200%2C-21.17%2039.16%2C0%200%2C-102.32%20z%20m%20103.72%2C0%200%2C123.49%20-23.11%2C0%200%2C-123.49%2023.11%2C0%20z%20m%20144.12%2C123.49%20-26.11%2C0%20-37.39%2C-96.14%20-37.22%2C96.14%20-26.11%2C0%2051.33%2C-124.01%2024.17%2C0%2051.33%2C124.01%20z%20m%20110.25%2C-100.55%20-69.32%2C0%200%2C27.87%2066.85%2C0%200%2C21.7%20-66.85%2C0%200%2C28.4%2069.32%2C0%200%2C22.58%20-92.43%2C0%20c%200%2C-41.11%200%2C-82.38%200%2C-123.49%20l%2092.43%2C0%200%2C22.94%20z%20m%20156.11%2C80.26%20c%20-9.35%2C19.05%20-29.28%2C24.52%20-48.51%2C24.52%20-22.75%2C-0.18%20-47.8%2C-10.59%20-47.8%2C-35.99%200%2C-27.69%2023.28%2C-34.4%2048.51%2C-37.39%2016.4%2C-1.77%2028.58%2C-6.53%2028.58%2C-18.17%200%2C-13.41%20-13.76%2C-18.53%20-28.4%2C-18.53%20-15%2C0%20-29.29%2C6%20-34.76%2C19.59%20l%20-19.4%2C-10.06%20c%209.17%2C-22.58%2028.58%2C-30.34%2053.8%2C-30.34%2027.52%2C0%2051.86%2C11.82%2051.86%2C39.34%200%2C29.46%20-23.99%2C36.16%20-49.74%2C39.33%20-14.82%2C1.77%20-27.52%2C4.77%20-27.52%2C15.53%200%2C9.17%208.29%2C16.4%2025.58%2C16.4%2013.41%2C0%2025.05%2C-6.7%2029.28%2C-13.76%20l%2018.52%2C9.53%20z%20m%2040.93%2C20.29%20-27.7%2C0%200%2C-1.06%2047.46%2C-71.45%200%2C-50.98%2023.28%2C0%200%2C50.98%2049.22%2C71.45%200%2C1.06%20-28.05%2C0%20-32.81%2C-50.98%20-31.4%2C50.98%20z%20m%20201.1%2C-20.29%20c%20-9.35%2C19.05%20-29.29%2C24.52%20-48.51%2C24.52%20-22.76%2C-0.18%20-47.81%2C-10.59%20-47.81%2C-35.99%200%2C-27.69%2023.29%2C-34.4%2048.51%2C-37.39%2016.41%2C-1.77%2028.58%2C-6.53%2028.58%2C-18.17%200%2C-13.41%20-13.76%2C-18.53%20-28.4%2C-18.53%20-15%2C0%20-29.28%2C6%20-34.75%2C19.59%20l%20-19.41%2C-10.06%20c%209.18%2C-22.58%2028.58%2C-30.34%2053.8%2C-30.34%2027.52%2C0%2051.87%2C11.82%2051.87%2C39.34%200%2C29.46%20-23.99%2C36.16%20-49.75%2C39.33%20-14.82%2C1.77%20-27.52%2C4.77%20-27.52%2C15.53%200%2C9.17%208.29%2C16.4%2025.58%2C16.4%2013.41%2C0%2025.05%2C-6.7%2029.28%2C-13.76%20l%2018.53%2C9.53%20z%20m%2057.68%2C-103.2%2023.28%2C0%200%2C102.32%2039.16%2C0%200%2C21.17%20c%20-35.81%2C0%20-65.97%2C0%20-101.6%2C0%20l%200%2C-21.17%2039.16%2C0%200%2C-102.32%20z%20m%20172.52%2C22.94%20-69.33%2C0%200%2C27.87%2066.86%2C0%200%2C21.7%20-66.86%2C0%200%2C28.4%2069.33%2C0%200%2C22.58%20-92.44%2C0%20c%200%2C-41.11%200%2C-82.38%200%2C-123.49%20l%2092.44%2C0%200%2C22.94%20z%20m%20129.47%2C-23.11%2023.29%2C0%200%2C123.48%20-26.64%2C0%20-38.63%2C-53.1%20-38.63%2C53.1%20-26.82%2C0%200%2C-123.48%2023.29%2C0%200%2C89.79%2039.34%2C-53.81%204.58%2C0%2040.22%2C53.63%200%2C-89.61%20z%20m%20143.77%2C103.37%20c%20-9.35%2C19.05%20-29.28%2C24.52%20-48.51%2C24.52%20-22.76%2C-0.18%20-47.81%2C-10.59%20-47.81%2C-35.99%200%2C-27.69%2023.29%2C-34.4%2048.51%2C-37.39%2016.41%2C-1.77%2028.58%2C-6.53%2028.58%2C-18.17%200%2C-13.41%20-13.76%2C-18.53%20-28.4%2C-18.53%20-14.99%2C0%20-29.28%2C6%20-34.75%2C19.59%20l%20-19.4%2C-10.06%20c%209.17%2C-22.58%2028.57%2C-30.34%2053.8%2C-30.34%2027.52%2C0%2051.86%2C11.82%2051.86%2C39.34%200%2C29.46%20-23.99%2C36.16%20-49.75%2C39.33%20-14.81%2C1.77%20-27.51%2C4.77%20-27.51%2C15.53%200%2C9.17%208.29%2C16.4%2025.57%2C16.4%2013.41%2C0%2025.05%2C-6.7%2029.29%2C-13.76%20l%2018.52%2C9.53%22%20/%3E%3Cpath%0A%20%20%20%20%20%20%20%20%20id%3D%22path28%22%0A%20%20%20%20%20%20%20%20%20style%3D%22fill%3Anone%3Bstroke%3A%23000000%3Bstroke-width%3A1%3Bstroke-linecap%3Abutt%3Bstroke-linejoin%3Amiter%3Bstroke-miterlimit%3A5.88002014%3Bstroke-dasharray%3Anone%3Bstroke-opacity%3A1%22%0A%20%20%20%20%20%20%20%20%20d%3D%22m%201766.98%2C1436.84%200%2C123.49%20-23.11%2C0%200%2C-123.49%2023.11%2C0%20z%20m%20106.9%2C46.93%20-60.5%2C76.56%20-18.88%2C0%200%2C-123.49%2023.29%2C0%200%2C83.27%2064.91%2C-83.44%200%2C0.17%2014.47%2C0%200%2C123.66%20-23.29%2C0%200%2C-76.73%20z%20m%2080.44%2C-46.93%2023.28%2C0%200%2C102.32%2039.16%2C0%200%2C21.17%20c%20-35.8%2C0%20-65.97%2C0%20-101.6%2C0%20l%200%2C-21.17%2039.16%2C0%200%2C-102.32%20z%20m%20172.52%2C22.94%20-69.33%2C0%200%2C27.87%2066.86%2C0%200%2C21.7%20-66.86%2C0%200%2C28.4%2069.33%2C0%200%2C22.58%20-92.44%2C0%20c%200%2C-41.11%200%2C-82.38%200%2C-123.49%20l%2092.44%2C0%200%2C22.94%20z%20m%20131.41%2C-21.35%20-37.39%2C42.16%20c%2023.46%2C4.77%2031.22%2C21.88%2031.22%2C38.81%200%2C21.34%20-15.35%2C40.75%20-44.45%2C40.93%20-19.58%2C0%20-39.16%2C0.17%20-58.74%2C0.17%20l%200%2C-123.66%2023.28%2C0%200%2C41.28%2022.4%2C0%2035.99%2C-41.28%2027.69%2C0%200%2C1.59%20z%20m%20-50.62%2C100.2%20c%2014.64%2C0%2021.17%2C-9.88%2021.17%2C-19.76%200%2C-9.88%20-6.36%2C-19.76%20-21.17%2C-19.76%20l%20-35.46%2C0%200%2C39.52%2035.46%2C0%20z%20m%20162.11%2C-101.79%2025.4%2C0%20-55.39%2C123.49%20-25.4%2C0%20-55.39%2C-123.49%2025.22%2C0%2010.59%2C23.29%2064.56%2C0%2010.41%2C-23.29%20z%20m%20-19.76%2C44.99%20-45.86%2C0%2022.93%2C52.56%2022.93%2C-52.56%20z%20m%20145.18%2C-13.41%20c%20-8.12%2C-8.11%20-20.29%2C-12.52%20-31.05%2C-12.52%20-30.52%2C0%20-42.33%2C21.34%20-42.51%2C41.8%20-0.18%2C20.64%2012.7%2C42.87%2042.51%2C42.87%2010.76%2C0%2021.7%2C-3.71%2029.81%2C-11.64%20l%2015.53%2C14.99%20c%20-12.7%2C12.52%20-28.58%2C18.87%20-45.34%2C18.87%20-44.63%2C0%20-65.62%2C-32.81%20-65.44%2C-65.09%200.17%2C-32.1%2019.58%2C-63.68%2065.44%2C-63.68%2017.82%2C0%2034.22%2C5.82%2046.92%2C18.35%20l%20-15.87%2C16.05%20z%20m%2062.97%2C-31.58%2023.29%2C0%200%2C102.32%2039.16%2C0%200%2C21.17%20c%20-35.81%2C0%20-65.98%2C0%20-101.61%2C0%20l%200%2C-21.17%2039.16%2C0%200%2C-102.32%20z%20m%20103.72%2C0%200%2C123.49%20-23.11%2C0%200%2C-123.49%2023.11%2C0%20z%20m%20144.12%2C123.49%20-26.11%2C0%20-37.39%2C-96.14%20-37.22%2C96.14%20-26.11%2C0%2051.33%2C-124.01%2024.17%2C0%2051.33%2C124.01%20z%20m%20110.25%2C-100.55%20-69.32%2C0%200%2C27.87%2066.85%2C0%200%2C21.7%20-66.85%2C0%200%2C28.4%2069.32%2C0%200%2C22.58%20-92.43%2C0%20c%200%2C-41.11%200%2C-82.38%200%2C-123.49%20l%2092.43%2C0%200%2C22.94%20z%20m%20156.11%2C80.26%20c%20-9.35%2C19.05%20-29.28%2C24.52%20-48.51%2C24.52%20-22.75%2C-0.18%20-47.8%2C-10.59%20-47.8%2C-35.99%200%2C-27.69%2023.28%2C-34.4%2048.51%2C-37.39%2016.4%2C-1.77%2028.58%2C-6.53%2028.58%2C-18.17%200%2C-13.41%20-13.76%2C-18.53%20-28.4%2C-18.53%20-15%2C0%20-29.29%2C6%20-34.76%2C19.59%20l%20-19.4%2C-10.06%20c%209.17%2C-22.58%2028.58%2C-30.34%2053.8%2C-30.34%2027.52%2C0%2051.86%2C11.82%2051.86%2C39.34%200%2C29.46%20-23.99%2C36.16%20-49.74%2C39.33%20-14.82%2C1.77%20-27.52%2C4.77%20-27.52%2C15.53%200%2C9.17%208.29%2C16.4%2025.58%2C16.4%2013.41%2C0%2025.05%2C-6.7%2029.28%2C-13.76%20l%2018.52%2C9.53%20z%20m%2040.93%2C20.29%20-27.7%2C0%200%2C-1.06%2047.46%2C-71.45%200%2C-50.98%2023.28%2C0%200%2C50.98%2049.22%2C71.45%200%2C1.06%20-28.05%2C0%20-32.81%2C-50.98%20-31.4%2C50.98%20z%20m%20201.1%2C-20.29%20c%20-9.35%2C19.05%20-29.29%2C24.52%20-48.51%2C24.52%20-22.76%2C-0.18%20-47.81%2C-10.59%20-47.81%2C-35.99%200%2C-27.69%2023.29%2C-34.4%2048.51%2C-37.39%2016.41%2C-1.77%2028.58%2C-6.53%2028.58%2C-18.17%200%2C-13.41%20-13.76%2C-18.53%20-28.4%2C-18.53%20-15%2C0%20-29.28%2C6%20-34.75%2C19.59%20l%20-19.41%2C-10.06%20c%209.18%2C-22.58%2028.58%2C-30.34%2053.8%2C-30.34%2027.52%2C0%2051.87%2C11.82%2051.87%2C39.34%200%2C29.46%20-23.99%2C36.16%20-49.75%2C39.33%20-14.82%2C1.77%20-27.52%2C4.77%20-27.52%2C15.53%200%2C9.17%208.29%2C16.4%2025.58%2C16.4%2013.41%2C0%2025.05%2C-6.7%2029.28%2C-13.76%20l%2018.53%2C9.53%20z%20m%2057.68%2C-103.2%2023.28%2C0%200%2C102.32%2039.16%2C0%200%2C21.17%20c%20-35.81%2C0%20-65.97%2C0%20-101.6%2C0%20l%200%2C-21.17%2039.16%2C0%200%2C-102.32%20z%20m%20172.52%2C22.94%20-69.33%2C0%200%2C27.87%2066.86%2C0%200%2C21.7%20-66.86%2C0%200%2C28.4%2069.33%2C0%200%2C22.58%20-92.44%2C0%20c%200%2C-41.11%200%2C-82.38%200%2C-123.49%20l%2092.44%2C0%200%2C22.94%20z%20m%20129.47%2C-23.11%2023.29%2C0%200%2C123.48%20-26.64%2C0%20-38.63%2C-53.1%20-38.63%2C53.1%20-26.82%2C0%200%2C-123.48%2023.29%2C0%200%2C89.79%2039.34%2C-53.81%204.58%2C0%2040.22%2C53.63%200%2C-89.61%20z%20m%20143.77%2C103.37%20c%20-9.35%2C19.05%20-29.28%2C24.52%20-48.51%2C24.52%20-22.76%2C-0.18%20-47.81%2C-10.59%20-47.81%2C-35.99%200%2C-27.69%2023.29%2C-34.4%2048.51%2C-37.39%2016.41%2C-1.77%2028.58%2C-6.53%2028.58%2C-18.17%200%2C-13.41%20-13.76%2C-18.53%20-28.4%2C-18.53%20-14.99%2C0%20-29.28%2C6%20-34.75%2C19.59%20l%20-19.4%2C-10.06%20c%209.17%2C-22.58%2028.57%2C-30.34%2053.8%2C-30.34%2027.52%2C0%2051.86%2C11.82%2051.86%2C39.34%200%2C29.46%20-23.99%2C36.16%20-49.75%2C39.33%20-14.81%2C1.77%20-27.51%2C4.77%20-27.51%2C15.53%200%2C9.17%208.29%2C16.4%2025.57%2C16.4%2013.41%2C0%2025.05%2C-6.7%2029.29%2C-13.76%20l%2018.52%2C9.53%20z%22%20/%3E%3Cpath%0A%20%20%20%20%20%20%20%20%20id%3D%22path30%22%0A%20%20%20%20%20%20%20%20%20style%3D%22fill%3A%23000000%3Bfill-opacity%3A1%3Bfill-rule%3Anonzero%3Bstroke%3Anone%22%0A%20%20%20%20%20%20%20%20%20d%3D%22m%201766.98%2C1648.53%200%2C123.48%20-23.11%2C0%200%2C-123.48%2023.11%2C0%20z%20m%20106.9%2C46.92%20-60.5%2C76.56%20-18.88%2C0%200%2C-123.48%2023.29%2C0%200%2C83.26%2064.91%2C-83.44%200%2C0.18%2014.47%2C0%200%2C123.65%20-23.29%2C0%200%2C-76.73%20z%20m%20145.18%2C56.27%20c%20-9.35%2C19.05%20-29.29%2C24.52%20-48.51%2C24.52%20-22.76%2C-0.18%20-47.81%2C-10.58%20-47.81%2C-35.99%200%2C-27.69%2023.29%2C-34.39%2048.51%2C-37.39%2016.41%2C-1.77%2028.58%2C-6.53%2028.58%2C-18.17%200%2C-13.41%20-13.76%2C-18.52%20-28.4%2C-18.52%20-15%2C0%20-29.29%2C5.99%20-34.75%2C19.58%20l%20-19.41%2C-10.06%20c%209.18%2C-22.58%2028.58%2C-30.34%2053.8%2C-30.34%2027.52%2C0%2051.87%2C11.82%2051.87%2C39.34%200%2C29.46%20-23.99%2C36.16%20-49.75%2C39.33%20-14.82%2C1.77%20-27.52%2C4.77%20-27.52%2C15.53%200%2C9.17%208.29%2C16.4%2025.58%2C16.4%2013.41%2C0%2025.05%2C-6.7%2029.28%2C-13.76%20l%2018.53%2C9.53%20z%20m%2057.68%2C-103.19%2023.28%2C0%200%2C102.31%2039.16%2C0%200%2C21.17%20c%20-35.81%2C0%20-65.97%2C0%20-101.6%2C0%20l%200%2C-21.17%2039.16%2C0%200%2C-102.31%20z%20m%20103.72%2C0%200%2C123.48%20-23.11%2C0%200%2C-123.48%2023.11%2C0%20z%20m%2063.33%2C0%2023.28%2C0%200%2C102.31%2039.16%2C0%200%2C21.17%20c%20-35.81%2C0%20-65.97%2C0%20-101.6%2C0%20l%200%2C-21.17%2039.16%2C0%200%2C-102.31%20z%20m%20169.34%2C123.3%200%2C-70.74%20c%200%2C-21.17%20-10.94%2C-34.04%20-30.17%2C-34.04%20-19.22%2C0%20-31.92%2C11.82%20-31.92%2C34.04%20l%200%2C70.74%20-23.11%2C0%200%2C-70.74%20c%200%2C-37.22%2025.22%2C-55.21%2054.86%2C-55.21%2031.04%2C0%2053.45%2C18.7%2053.45%2C55.21%20l%200%2C70.74%20-23.11%2C0%20z%20m%2081.67%2C-123.3%2023.29%2C0%200%2C102.31%2039.16%2C0%200%2C21.17%20c%20-35.81%2C0%20-65.98%2C0%20-101.61%2C0%20l%200%2C-21.17%2039.16%2C0%200%2C-102.31%20z%20m%20172.52%2C22.93%20-69.33%2C0%200%2C27.87%2066.86%2C0%200%2C21.7%20-66.86%2C0%200%2C28.4%2069.33%2C0%200%2C22.58%20-92.44%2C0%20c%200%2C-41.11%200%2C-82.38%200%2C-123.48%20l%2092.44%2C0%200%2C22.93%20z%20m%20119.42%2C103.02%20c%20-42.69%2C0%20-63.5%2C-32.64%20-63.5%2C-65.1%200%2C-32.45%2020.11%2C-63.68%2063.5%2C-63.68%2043.39%2C0%2062.97%2C31.93%2063.33%2C63.86%200.35%2C32.28%20-20.82%2C64.92%20-63.33%2C64.92%20z%20m%200%2C-21.17%20c%2029.11%2C0%2040.75%2C-23.29%2040.4%2C-44.1%20-0.36%2C-20.29%20-11.29%2C-42.16%20-40.4%2C-42.16%20-29.11%2C0%20-40.04%2C21.69%20-40.57%2C41.98%20-0.53%2C20.82%2011.46%2C44.28%2040.57%2C44.28%20z%20m%20107.6%2C-104.78%200%2C45.68%2061.92%2C0%200%2C21.52%20-61.92%2C0%200%2C33.7%2065.45%2C0%200%2C22.4%20-88.73%2C0%200%2C-123.3%2023.28%2C0%22%20/%3E%3Cpath%0A%20%20%20%20%20%20%20%20%20id%3D%22path32%22%0A%20%20%20%20%20%20%20%20%20style%3D%22fill%3Anone%3Bstroke%3A%23000000%3Bstroke-width%3A1%3Bstroke-linecap%3Abutt%3Bstroke-linejoin%3Amiter%3Bstroke-miterlimit%3A5.88002014%3Bstroke-dasharray%3Anone%3Bstroke-opacity%3A1%22%0A%20%20%20%20%20%20%20%20%20d%3D%22m%201766.98%2C1648.53%200%2C123.48%20-23.11%2C0%200%2C-123.48%2023.11%2C0%20z%20m%20106.9%2C46.92%20-60.5%2C76.56%20-18.88%2C0%200%2C-123.48%2023.29%2C0%200%2C83.26%2064.91%2C-83.44%200%2C0.18%2014.47%2C0%200%2C123.65%20-23.29%2C0%200%2C-76.73%20z%20m%20145.18%2C56.27%20c%20-9.35%2C19.05%20-29.29%2C24.52%20-48.51%2C24.52%20-22.76%2C-0.18%20-47.81%2C-10.58%20-47.81%2C-35.99%200%2C-27.69%2023.29%2C-34.39%2048.51%2C-37.39%2016.41%2C-1.77%2028.58%2C-6.53%2028.58%2C-18.17%200%2C-13.41%20-13.76%2C-18.52%20-28.4%2C-18.52%20-15%2C0%20-29.29%2C5.99%20-34.75%2C19.58%20l%20-19.41%2C-10.06%20c%209.18%2C-22.58%2028.58%2C-30.34%2053.8%2C-30.34%2027.52%2C0%2051.87%2C11.82%2051.87%2C39.34%200%2C29.46%20-23.99%2C36.16%20-49.75%2C39.33%20-14.82%2C1.77%20-27.52%2C4.77%20-27.52%2C15.53%200%2C9.17%208.29%2C16.4%2025.58%2C16.4%2013.41%2C0%2025.05%2C-6.7%2029.28%2C-13.76%20l%2018.53%2C9.53%20z%20m%2057.68%2C-103.19%2023.28%2C0%200%2C102.31%2039.16%2C0%200%2C21.17%20c%20-35.81%2C0%20-65.97%2C0%20-101.6%2C0%20l%200%2C-21.17%2039.16%2C0%200%2C-102.31%20z%20m%20103.72%2C0%200%2C123.48%20-23.11%2C0%200%2C-123.48%2023.11%2C0%20z%20m%2063.33%2C0%2023.28%2C0%200%2C102.31%2039.16%2C0%200%2C21.17%20c%20-35.81%2C0%20-65.97%2C0%20-101.6%2C0%20l%200%2C-21.17%2039.16%2C0%200%2C-102.31%20z%20m%20169.34%2C123.3%200%2C-70.74%20c%200%2C-21.17%20-10.94%2C-34.04%20-30.17%2C-34.04%20-19.22%2C0%20-31.92%2C11.82%20-31.92%2C34.04%20l%200%2C70.74%20-23.11%2C0%200%2C-70.74%20c%200%2C-37.22%2025.22%2C-55.21%2054.86%2C-55.21%2031.04%2C0%2053.45%2C18.7%2053.45%2C55.21%20l%200%2C70.74%20-23.11%2C0%20z%20m%2081.67%2C-123.3%2023.29%2C0%200%2C102.31%2039.16%2C0%200%2C21.17%20c%20-35.81%2C0%20-65.98%2C0%20-101.61%2C0%20l%200%2C-21.17%2039.16%2C0%200%2C-102.31%20z%20m%20172.52%2C22.93%20-69.33%2C0%200%2C27.87%2066.86%2C0%200%2C21.7%20-66.86%2C0%200%2C28.4%2069.33%2C0%200%2C22.58%20-92.44%2C0%20c%200%2C-41.11%200%2C-82.38%200%2C-123.48%20l%2092.44%2C0%200%2C22.93%20z%20m%20119.42%2C103.02%20c%20-42.69%2C0%20-63.5%2C-32.64%20-63.5%2C-65.1%200%2C-32.45%2020.11%2C-63.68%2063.5%2C-63.68%2043.39%2C0%2062.97%2C31.93%2063.33%2C63.86%200.35%2C32.28%20-20.82%2C64.92%20-63.33%2C64.92%20z%20m%200%2C-21.17%20c%2029.11%2C0%2040.75%2C-23.29%2040.4%2C-44.1%20-0.36%2C-20.29%20-11.29%2C-42.16%20-40.4%2C-42.16%20-29.11%2C0%20-40.04%2C21.69%20-40.57%2C41.98%20-0.53%2C20.82%2011.46%2C44.28%2040.57%2C44.28%20z%20m%20107.6%2C-104.78%200%2C45.68%2061.92%2C0%200%2C21.52%20-61.92%2C0%200%2C33.7%2065.45%2C0%200%2C22.4%20-88.73%2C0%200%2C-123.3%2023.28%2C0%20z%22%20/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") top 0.6em left 0.6em no-repeat;
+  background-size: 2.4em, 1.5em 1.5em;
+  z-index: 1; }
+
+@font-face {
+  font-family: 'tugraz';
+  src: url("../../lib/font/tugraz/tugraz.eot?fxirr0");
+  src: url("../../lib/font/tugraz/tugraz.eot?fxirr0#iefix") format("embedded-opentype"), url("../../lib/font/tugraz/tugraz.ttf?fxirr0") format("truetype"), url("../../lib/font/tugraz/tugraz.woff?fxirr0") format("woff"), url("../../lib/font/tugraz/tugraz.svg?fxirr0#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'tugraz' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-tugraz_logo:before {
+  content: "\f0873";
+  vertical-align: 0.0em;
+  font-size: 0.8em; }
+
+.icon-tugraz_logo_color:before {
+  content: "\f0873";
+  vertical-align: 0.0em;
+  font-size: 0.8em;
+  color: #E4154B; }
+
+.reveal .footer {
+  position: absolute;
+  bottom: 1em;
+  left: 2em;
+  font-size: 0.5em;
+  z-index: 1;
+  background-color: #fff;
+  box-shadow: rgba(255, 255, 255, 0.8) 0.1em 0.1em 0.5em;
+  padding: 0.15em;
+  border-radius: 0.2em; }
+
+.reveal section img {
+  border: 0;
+  box-shadow: none; }
+
+.reveal h1.light,
+.reveal h2.light,
+.reveal h3.light,
+.reveal h4.light,
+.reveal h5.light,
+.reveal h6.light {
+  color: #eee; }
+
+.reveal .light.shadow {
+  text-shadow: 0em 0em 0.2em #222; }
+
+.reveal .dark.shadow {
+  text-shadow: 0em 0em 0.2em #eee; }
+
+.reveal .higher {
+  position: relative;
+  top: -2.2em; }
+
+.reveal .lower {
+  position: relative;
+  top: 2.2em; }
+
+.reveal ul li {
+  color: #222;
+  list-style: none; }
+
+.reveal ul li:before {
+  content: "\203A";
+  top: 0.0em;
+  font-size: 1.3em;
+  position: relative;
+  padding-right: 0.25em;
+  color: #E4154B; }
+
+.reveal ul ul li:before {
+  content: "\BB";
+  top: 0.0em; }
+
+.reveal ul ul ul li:before {
+  content: "\203A";
+  top: 0.0em; }
+
+.reveal ul ul ul ul li:before {
+  content: "\BB";
+  top: 0.0em; }
+
+img.emoji {
+  height: 1.5em;
+  width: 1.5em;
+  margin: 0 .05em 0 .1em;
+  padding-bottom: -0.25em;
+  vertical-align: -0.1em; }
+
+.reveal .slides section p.wikipedia {
+  font-size: 0.5em; }
+
+.reveal .slides section p.wikipedia img {
+  max-height: 480px;
+  max-width: 60%;
+  width: auto;
+  height: auto; }
+
+.fa-tugraz-color {
+  color: #E4154B; }

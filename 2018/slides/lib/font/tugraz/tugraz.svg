@@ -1,0 +1,11 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata></metadata>
+<defs>
+<font id="tugraz" horiz-adv-x="1024">
+<font-face units-per-em="1024" ascent="960" descent="-64" />
+<missing-glyph horiz-adv-x="1024" />
+<glyph unicode="&#x20;" horiz-adv-x="512" d="" />
+<glyph unicode="&#xf0873;" glyph-name="tugraz_logo" horiz-adv-x="1638" d="M511.988 192.006h-511.988v511.988h511.988v-511.988zM1075.211 192.006h-512.012v511.988h512.012v-511.988zM1638.41 192.006h-511.988v511.988h511.988v-511.988zM768.018-64h-512.037v511.988h512.037v-511.988zM1382.379 447.988h-511.963v512.012h511.963v-512.012z" />
+</font></defs></svg>

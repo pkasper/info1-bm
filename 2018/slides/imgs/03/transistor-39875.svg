@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker orient="auto" refX="0" refY="0">
+<path d="m0,0 5-5-17.5,5 17.5,5-5-5z" fill-rule="evenodd" stroke="#000" stroke-width="1pt" transform="matrix(-.8,0,0,-.8,-10,0)"/>
+</marker>
+</defs>
+<g transform="matrix(.55378,0,0,.55378,30.32783,23.03611)">
+<path d="m74.82143,44.82143a30.17857,30.17857 0 1,1 -60.35714,0 30.17857,30.17857 0 1,1 60.35714,0z" fill="#fff" stroke="#000" stroke-linecap="square" stroke-width=".76401" transform="matrix(1.30888,0,0,1.30888,-8.43195,-8.66568)"/>
+<path d="m35,25v50.17857" fill="none" stroke="#000" stroke-width="5"/>
+<path d="m35,40 30-15v-30" fill="none" stroke="#000"/>
+<path d="m35,60 30,15v30" fill="none" stroke="#000"/>
+<path d="m-5,50h40" fill="none" stroke="#000"/>
+<g stroke="#000" transform="matrix(.89221,.45162,-.45162,.89221,39.09282,68.6111)">
+<path d="m16-6-4,4 13.61549-3.89014 .04296-.20744-13.65845-3.90241 4,4z" fill-rule="evenodd" stroke="#000"/>
+</g>
+<path d="m68-5a3,3 0 1,1 -6,0 3,3 0 1,1 6,0z" fill="#fff" stroke="#000" stroke-linecap="square"/>
+<path d="m68-5a3,3 0 1,1 -6,0 3,3 0 1,1 6,0z" fill="#fff" stroke="#000" stroke-linecap="square" transform="translate(-70,55)"/>
+<path d="m68-5a3,3 0 1,1 -6,0 3,3 0 1,1 6,0z" fill="#fff" stroke="#000" stroke-linecap="square" transform="translate(0,110)"/><text font-family="Helvetica" font-size="10.46626" transform="scale(1.01968,.9807)" x="60.08122" xml:space="preserve" y="-15.29521"><tspan x="60.08122" y="-15.29521">C</tspan></text><text font-family="Helvetica" font-size="10.46626" transform="scale(1.01968,.9807)" x="-19.61398" xml:space="preserve" y="54.79901"><tspan x="-19.61398" y="54.79901">B</tspan></text><text font-family="Helvetica" font-size="10.46626" transform="scale(1.01968,.9807)" x="60.26009" xml:space="preserve" y="122.3617"><tspan x="60.26009" y="122.3617">E</tspan></text>
+</g>
+</svg>
